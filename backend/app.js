@@ -1,11 +1,15 @@
+require("dotenv").config();
+
 const express = require("express");
 const app = express();
-const userRouter = require("./routes/user");
-const productRouter = require("./routes/product");
+const errorHandler = require("./middlewares/errorHandler");
+const authRoutes = require("./routes/auth");
 
-app.use("/product", productRouter);
-app.use("/user", userRouter);
+app.use(express.json());
+app.use("/api/v1/auth", authRoutes);
+app.use(errorHandler);
 
-app.listen(3000, () => {
-    console.log("Server is running on port 3000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
