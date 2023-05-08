@@ -1,48 +1,47 @@
+const Customer = require("../models/customer");
+
+const { userNameCheck, loginRole, registerRole } = require("./utils");
+
 const login = async (req, res) => {
-    const { role, username, password } = req.body;
+    const { role } = req.body;
 
     switch (role) {
         case "vendor":
-            // check database
+            // await loginRole(Vendor);
             return;
         case "customer":
-            // check database
+            await loginRole(req, res, Customer);
             return;
         case "shipper":
             // check database
             return;
     }
 
-    res.status(400).json({ message: "Invalid role" });
+    return res.status(400).json({ message: "Invalid role" });
 };
 
 const register = async (req, res) => {
-    const { role } = req.body;
+    const { role, username } = req.body;
+
+    const usernameValid = await userNameCheck(username);
+    if (usernameValid === false) {
+        return res.status(400).json({ message: "Username already taken" });
+    }
+
     switch (role) {
         case "vendor":
-            registerVendor(req, res);
+            await registerVendor(req, res);
             return;
         case "customer":
-            registerCustomer(req, res);
+            req.body = {};
+            await registerCustomer(req, res);
             return;
         case "shipper":
-            registerShipper(req, res);
+            await registerShipper(req, res);
             return;
     }
 
-    res.status(400).json({ message: "Invalid role" });
-};
-
-const registerVendor = async (req, res) => {
-    res.send("Register Vendor");
-};
-
-const registerCustomer = async (req, res) => {
-    res.send("Register Customer");
-};
-
-const registerShipper = async (req, res) => {
-    res.send("Register Shipper");
+    return res.status(400).json({ message: "Invalid role" });
 };
 
 module.exports = { login, register };
