@@ -1,3 +1,5 @@
+const bcrypt = require("bcryptjs");
+
 const mongoose = require("mongoose");
 const VendorSchema = new mongoose.Schema({
     username: {
@@ -35,8 +37,16 @@ const VendorSchema = new mongoose.Schema({
     },
 });
 
+// Hash password before saving to database
+VendorSchema.pre("save", async function (next) {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+});
+
+// Compare password
 VendorSchema.methods.comparePassword = async function (password) {
-    return password === this.password;
+    return await bcrypt.compare(password, this.password);
 };
 
 module.exports = mongoose.model("Vendor", VendorSchema);
