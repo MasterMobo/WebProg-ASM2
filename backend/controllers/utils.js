@@ -17,7 +17,6 @@ const registerRole = async (req, res, schema) => {
 
 const loginRole = async (req, res, schema) => {
     const { username } = req.body;
-
     const foundUser = await schema.findOne({ username });
     if (!foundUser) {
         return res.status(404).json({ message: "Username not found" });
@@ -25,10 +24,10 @@ const loginRole = async (req, res, schema) => {
 
     const { password } = req.body;
     const passwordMatch = await foundUser.comparePassword(password);
-
     if (!passwordMatch) {
         return res.status(401).json({ message: "Invalid password" });
     }
+
     return res.status(200).json({ message: "Login success" });
 };
 
