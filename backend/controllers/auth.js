@@ -1,4 +1,5 @@
 const Customer = require("../models/customer");
+const Vendor = require("../models/vendor");
 
 const { userNameCheck, loginRole, registerRole } = require("./utils");
 
@@ -7,13 +8,13 @@ const login = async (req, res) => {
 
     switch (role) {
         case "vendor":
-            // await loginRole(Vendor);
+            await loginRole(req, res, Vendor);
             return;
         case "customer":
             await loginRole(req, res, Customer);
             return;
         case "shipper":
-            // check database
+            // await loginRole(req, res, Shipper);
             return;
     }
 
@@ -30,14 +31,13 @@ const register = async (req, res) => {
 
     switch (role) {
         case "vendor":
-            await registerVendor(req, res);
+            await registerRole(req, res, Vendor);
             return;
         case "customer":
-            req.body = {};
-            await registerCustomer(req, res);
+            await registerRole(req, res, Customer);
             return;
         case "shipper":
-            await registerShipper(req, res);
+            // await registerRole(req, res, Shipper);
             return;
     }
 
