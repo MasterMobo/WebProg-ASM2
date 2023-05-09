@@ -13,7 +13,7 @@ const DistributionHubSchema = new mongoose.Schema({
         unique: true,
         minlength: 5,
         maxlength: 100,
-    }
-})
+    },
+});
 
 module.exports = mongoose.model("DistributionHub", DistributionHubSchema);
