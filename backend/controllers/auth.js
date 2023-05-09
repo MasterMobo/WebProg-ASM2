@@ -2,6 +2,7 @@ const Customer = require("../models/customer");
 const Vendor = require("../models/vendor");
 
 const { userNameCheck, loginRole, registerRole } = require("./utils");
+const { BadRequestError } = require("../errors/index");
 
 const login = async (req, res) => {
     const { role } = req.body;
@@ -18,7 +19,7 @@ const login = async (req, res) => {
             return;
     }
 
-    return res.status(400).json({ message: "Invalid role" });
+    throw new BadRequestError("Invalid role");
 };
 
 const register = async (req, res) => {
@@ -26,7 +27,7 @@ const register = async (req, res) => {
 
     const usernameValid = await userNameCheck(username);
     if (usernameValid === false) {
-        return res.status(400).json({ message: "Username already taken" });
+        throw new BadRequestError("Username already taken");
     }
 
     switch (role) {
@@ -41,7 +42,7 @@ const register = async (req, res) => {
             return;
     }
 
-    return res.status(400).json({ message: "Invalid role" });
+    throw new BadRequestError("Invalid role");
 };
 
 module.exports = { login, register };

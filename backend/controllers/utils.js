@@ -1,6 +1,8 @@
 const Customer = require("../models/customer");
 const Vendor = require("../models/vendor");
 
+const { NotFoundError, UnauthorizedError } = require("../errors/index");
+
 const userNameCheck = async (username) => {
     // Check if username is already taken in the whole system
     const customerExists = await Customer.findOne({ username });
@@ -19,13 +21,13 @@ const loginRole = async (req, res, schema) => {
     const { username } = req.body;
     const foundUser = await schema.findOne({ username });
     if (!foundUser) {
-        return res.status(404).json({ message: "Username not found" });
+        throw new NotFoundError("Username not found");
     }
 
     const { password } = req.body;
     const passwordMatch = await foundUser.comparePassword(password);
     if (!passwordMatch) {
-        return res.status(401).json({ message: "Invalid password" });
+        throw new UnauthorizedError("Invalid password");
     }
 
     return res.status(200).json({ message: "Login success" });
