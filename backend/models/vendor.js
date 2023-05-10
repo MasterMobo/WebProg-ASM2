@@ -25,6 +25,7 @@ const VendorSchema = new mongoose.Schema({
     businessName: {
         type: String,
         required: [true, "Please provide business name"],
+        unique: true,
         minlength: 5,
         maxlength: 50,
     },
@@ -32,6 +33,7 @@ const VendorSchema = new mongoose.Schema({
     businessAddress: {
         type: String,
         required: [true, "Please provide business address"],
+        unique: true,
         minlength: 5,
         maxlength: 100,
     },
