@@ -12,33 +12,33 @@ const OrderSchema = new mongoose.Schema({
         // Distribution hub will be automatically picked (randomly) before saving to database
         type: mongoose.Schema.Types.ObjectId,
         ref: "DistributionHub",
-        required: true,
+        required: false,
     },
     customerAddress: {
         // Customer address will be automatically set before saving to database
         type: String,
-        required: true,
+        required: false,
     },
-    products: [
-        {
-            productID: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "Product",
-                required: [true, "Please provide product ID"],
-            },
-            quantity: {
-                type: Number,
-                required: [true, "Please provide quantity"],
-                min: 1,
-            },
-        },
-    ],
-    totalPrice: {
-        // Total price will be automatically calculated before saving to database
-        type: Number,
-        required: [true, "Please provide total price"],
-        min: 0,
-    },
+    // products: [
+    //     {
+    //         productID: {
+    //             type: mongoose.Schema.Types.ObjectId,
+    //             ref: "Product",
+    //             required: [true, "Please provide product ID"],
+    //         },
+    //         quantity: {
+    //             type: Number,
+    //             required: [true, "Please provide quantity"],
+    //             min: 1,
+    //         },
+    //     },
+    // ],
+    // totalPrice: {
+    //     // Total price will be automatically calculated before saving to database
+    //     type: Number,
+    //     required: [true, "Please provide total price"],
+    //     min: 0,
+    // },
     status: {
         type: String,
         required: [true, "Please provide status"],
