@@ -1,5 +1,6 @@
 const Product = require("./product");
 const DistributionHub = require("./distributionHub");
+const Customer = require("./customer");
 
 const mongoose = require("mongoose");
 const OrderSchema = new mongoose.Schema({
@@ -19,31 +20,31 @@ const OrderSchema = new mongoose.Schema({
         type: String,
         required: false,
     },
-    // products: [
-    //     {
-    //         productID: {
-    //             type: mongoose.Schema.Types.ObjectId,
-    //             ref: "Product",
-    //             required: [true, "Please provide product ID"],
-    //         },
-    //         quantity: {
-    //             type: Number,
-    //             required: [true, "Please provide quantity"],
-    //             min: 1,
-    //         },
-    //     },
-    // ],
-    // totalPrice: {
-    //     // Total price will be automatically calculated before saving to database
-    //     type: Number,
-    //     required: [true, "Please provide total price"],
-    //     min: 0,
-    // },
+    products: [
+        {
+            productID: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: "Product",
+                required: [true, "Please provide product ID"],
+            },
+            quantity: {
+                type: Number,
+                required: [true, "Please provide quantity"],
+                min: 1,
+            },
+        },
+    ],
+    totalPrice: {
+        // Total price will be automatically calculated before saving to database
+        type: Number,
+        required: [false, "Please provide total price"],
+        min: 0,
+    },
     status: {
         type: String,
         required: [true, "Please provide status"],
         enum: ["active", "delivered", "canceled"],
-        default: "pending",
+        default: "active",
     },
 });
 
