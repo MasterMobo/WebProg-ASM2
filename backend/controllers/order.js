@@ -7,7 +7,11 @@ const getOrders = async (req, res) => {
 
 const getOrderId = async (req, res) => {
     const order = await Order.findById(req.params.id);
-    res.status(200).json({ order });
+        
+    if (!order) {
+        throw new NotFoundError("Order not found");
+    }
+    return res.status(200).json({ order });
 };
 
 const addOrder = async (req, res) => {
@@ -17,7 +21,11 @@ const addOrder = async (req, res) => {
 
 const deleteOrder = async (req, res) => {
     const order = await Order.findByIdAndDelete(req.params.id);
-    res.status(200).json({ order });
+        
+    if (!order) {
+        throw new NotFoundError("Order not found");
+    }
+    return res.status(200).json({ order });
 };
 
 module.exports = { getOrders, getOrderId, addOrder, deleteOrder };
