@@ -1,4 +1,6 @@
-const mongoose = require('mongoose');
+const bcrypt = require("bcryptjs");
+
+const mongoose = require("mongoose");
 const ShipperSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -21,7 +23,25 @@ const ShipperSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "DistributionHub",
         require: [true, "Please provide distribution hub id"],
-    }
+    },
+    role: {
+        type: String,
+        require: [true, "Please provide role"],
+        enum: ["shipper"],
+        default: "shipper",
+    },
 });
+
+// Hash password before saving to database
+ShipperSchema.pre("save", async function (next) {
+    const salt = await bcrypt.genSalt(10);
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+});
+
+// Compare password
+ShipperSchema.methods.comparePassword = async function (password) {
+    return await bcrypt.compare(password, this.password);
+};
 
 module.exports = mongoose.model("Shipper", ShipperSchema);

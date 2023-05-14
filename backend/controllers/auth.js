@@ -1,8 +1,15 @@
 const Customer = require("../models/customer");
 const Vendor = require("../models/vendor");
+const Shipper = require("../models/shipper");
 
-const { userNameCheck, loginRole, registerRole } = require("./utils");
-const { BadRequestError } = require("../errors/index");
+const jwt = require("jsonwebtoken");
+
+const { userNameCheck } = require("./utils");
+const {
+    BadRequestError,
+    NotFoundError,
+    UnauthorizedError,
+} = require("../errors/index");
 
 const login = async (req, res) => {
     const { role } = req.body;
@@ -15,7 +22,7 @@ const login = async (req, res) => {
             await loginRole(req, res, Customer);
             return;
         case "shipper":
-            // await loginRole(req, res, Shipper);
+            await loginRole(req, res, Shipper);
             return;
     }
 
@@ -38,11 +45,40 @@ const register = async (req, res) => {
             await registerRole(req, res, Customer);
             return;
         case "shipper":
-            // await registerRole(req, res, Shipper);
+            await registerRole(req, res, Shipper);
             return;
     }
 
     throw new BadRequestError("Invalid role");
+};
+
+const registerRole = async (req, res, model) => {
+    const newUser = await model.create(req.body);
+    return res.status(201).json({ newUser });
+};
+
+const loginRole = async (req, res, model) => {
+    const { username } = req.body;
+    const foundUser = await model.findOne({ username });
+    if (!foundUser) {
+        throw new NotFoundError("Username not found");
+    }
+
+    const { password } = req.body;
+    const passwordMatch = await foundUser.comparePassword(password);
+    if (!passwordMatch) {
+        throw new UnauthorizedError("Invalid password");
+    }
+
+    const token = jwt.sign(
+        { userID: foundUser._id, role: foundUser.role },
+        process.env.JWT_SECRET,
+        {
+            expiresIn: "30d",
+        }
+    );
+
+    return res.status(200).json({ message: "Login success", token });
 };
 
 module.exports = { login, register };

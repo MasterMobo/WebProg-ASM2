@@ -8,8 +8,10 @@ const connectDB = require("./db/connect");
 
 // Middlewares
 const errorHandler = require("./middlewares/errorHandler");
+const jwtAuth = require("./middlewares/jwtAuth");
 
 // Routers
+const meRoutes = require("./routes/me");
 const authRoutes = require("./routes/auth");
 const customerRoutes = require("./routes/customer");
 const vendorRoutes = require("./routes/vendor");
@@ -19,6 +21,7 @@ const orderRoutes = require("./routes/order");
 
 app.use(express.json()); // Middleware to handle JSON data
 app.use("/api/v1/auth", authRoutes); // Route for login and register
+app.use("/api/v1/me", jwtAuth, meRoutes);
 app.use("/api/v1/customer", customerRoutes);
 app.use("/api/v1/vendor", vendorRoutes);
 app.use("/api/v1/shipper", shipperRoutes);

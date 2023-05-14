@@ -37,6 +37,12 @@ const VendorSchema = new mongoose.Schema({
         minlength: 5,
         maxlength: 100,
     },
+    role: {
+        type: String,
+        required: [true, "Please provide role"],
+        enum: ["vendor"],
+        default: "vendor",
+    },
 });
 
 // Hash password before saving to database

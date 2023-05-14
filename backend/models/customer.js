@@ -35,6 +35,12 @@ const CustomerSchema = new mongoose.Schema({
         minlength: 5,
         maxlength: 100,
     },
+    role: {
+        type: String,
+        required: [true, "Please provide role"],
+        enum: ["customer"],
+        default: "customer",
+    },
 });
 
 // Hash password before saving to database
