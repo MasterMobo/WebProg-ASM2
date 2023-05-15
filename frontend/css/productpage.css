@@ -1,0 +1,370 @@
+:root {
+    --fs-tablet-large: 1.5rem;
+    --fs-tablet-medium: 1.35rem;
+    --fs-tablet-small: 1.05rem;
+    --fs-tablet-para: 0.96rem;
+
+    --fs-mobile-large: 1.25rem;
+    --fs-mobile-medium: 1.125rem;
+    --fs-mobile-small: 0.875rem;
+    --fs-mobile-para: 0.8rem;
+
+    --fs-desktop-large: 1.8rem;
+    --fs-desktop-medium: 1.62rem;
+    --fs-desktop-small: 1.26rem;
+    --fs-desktop-para: 1.152rem;
+
+    --fw-light: 300;
+    --fw-reg: 400;
+    --fw-semi-bold: 650;
+    --fw-bold: 800;
+    /* Colors */
+    --black: rgba(0, 0, 0, 1);
+    --khaki: rgba(255, 220, 130, 1);
+    --white: rgba(255, 255, 255, 1);
+    --LINK-ON-HOVER: #6c2626;
+    --LIGHT-KOFI-GREY: #F7F7F7;
+    --GREY-TEXT-COLOR: rgba(25, 32, 37, .6);
+    --TEXT-COLOR: #192025;
+    --PAYMENT-BORDER: 2px solid #d1d1d1;
+    --BUTTON-BACKGROUND: #04759e;
+    --button-on-hover: #c2c2c2;
+
+    /* Typographies */
+    /* inconsolata-10-regular */
+    --inconsolata-10-regular-family: "Inconsolata";
+    --inconsolata-10-regular-size: 10px;
+    --inconsolata-10-regular-weight: 400;
+    --inconsolata-10-regular-line-height: normal;
+
+    /* inconsolata-14-regular */
+    --inconsolata-14-regular-family: "Inconsolata";
+    --inconsolata-14-regular-size: 14px;
+    --inconsolata-14-regular-weight: 400;
+    --inconsolata-14-regular-line-height: normal;
+
+    /* inconsolata-15-bold */
+    --inconsolata-15-bold-family: "Inconsolata";
+    --inconsolata-15-bold-size: 15px;
+    --inconsolata-15-bold-weight: 700;
+    --inconsolata-15-bold-line-height: normal;
+
+    /* inconsolata-15-regular */
+    --inconsolata-15-regular-family: "Inconsolata";
+    --inconsolata-15-regular-size: 15px;
+    --inconsolata-15-regular-weight: 400;
+    --inconsolata-15-regular-line-height: normal;
+
+    /* inconsolata-17-regular */
+    --inconsolata-17-regular-family: "Inconsolata";
+    --inconsolata-17-regular-size: 17px;
+    --inconsolata-17-regular-weight: 400;
+    --inconsolata-17-regular-line-height: normal;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(163, 163, 163, 0.44);
+}
+a,
+a.visited {
+    text-decoration: none;
+    color: var(--TEXT-COLOR);
+}
+.samsung-galaxy-a20 {
+    width: 100%;
+    overflow: hidden;
+}
+
+.header {
+    width: 100%;
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+section {
+    display: flex;
+    justify-content: center;
+    max-width: 1440px;
+    margin: 0 auto 20px auto;
+    background-color: #F7F7F7;
+}
+.search-filter-add-to-cart-header {
+    display: none;
+}
+
+.menu-icon-and-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.menu-icon {
+    padding: 3.31px 0 5.3px;
+    position: relative;
+    border-top: 2px solid var(--black);
+}
+
+.rectangle-11 {
+    width: 23px;
+    height: 1.77px;
+    background-color: var(--black);
+}
+
+.rectangle-12 {
+    width: 23px;
+    height: 1.77px;
+    background-color: var(--black);
+    position: absolute;
+    left: 0;
+    top: 8.62px;
+}
+
+.logo {
+    width: 108px;
+    height: 40px;
+    margin-right: 72px;
+}
+
+.profile-name-and-picture {
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.profiles-name {
+    height: 17.18px;
+    width: 125px;
+    color: var(--black);
+    position: relative;
+    font-family: var(--inconsolata-10-regular-family);
+    font-size: var(--fs-mobile-medium);
+    font-weight: var(--fw-semi-bold);
+    line-height: var(--inconsolata-10-regular-line-height);
+}
+
+.profile-picture {
+    width: 25px;
+    height: 25px;
+    background-color: rgba(217, 217, 217, 1);
+    border-radius: 50%;
+    border: 1px solid var(--black);
+}
+.item-information{
+    max-width: 1024px;
+}
+.item-image-and-description {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-evenly;
+    align-items: center;
+    top: 20px;
+    height: fit-content;
+}
+
+.item-image-container {
+    background-color: transparent;
+    height: 400px;
+    width: fit-content;
+}
+
+.item-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.shop-detail {
+    margin-top: 2rem;
+}
+
+.shop-detail,
+.payment-number-of-sold-and-content-wrapper {
+    width: fit-content;
+    height: auto;
+}
+
+.shop-detail>span {
+    margin-left: 1.5rem;
+    font-weight: 700;
+    font-size: 22px !important;
+}
+
+.profile-picture-and-shop {
+    margin-left: 1.5rem;
+}
+
+.profile-picture {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.profile-picture-and-shop,
+.profile-name-and-shop,
+.profile-name-and-shop-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.a-dot {
+    margin-left: 8px;
+    color: var(--GREY-TEXT-COLOR);
+    padding-bottom: 4px;
+}
+
+.link-to-shop>span {
+    color: var(--GREY-TEXT-COLOR);
+    margin-left: 8px;
+}
+
+.payment-number-of-sold-and-content-wrapper {
+    padding: 16px 24px;
+}
+
+.payment-number-of-sold-and-content {
+    width: 100%;
+}
+.payment{
+    width: 200%;
+}
+
+
+.add-to-cart-link {
+    height: 46px;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    font-size: 20px !important;
+    border-radius: 100px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: var(--BUTTON-BACKGROUND);
+    color: #fff;
+    transition: background-color .15s ease-in-out 0s;
+}
+
+.add-to-cart-link:hover {
+    background: rgba(44, 202, 255, 0.8);
+    transition: background-color .15s ease-in-out 0s;
+}
+
+.number-of-sold,
+.product-content {
+    padding: 8px 0px;
+    font-size: 14px !important;
+}
+
+.description-and-share {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: flex-end;
+    max-width: 100%;
+    top: 20px;
+    height: fit-content;
+}
+
+.product-description {
+    padding: 24px;
+    width: 100%;
+    height: fit-content;
+}
+
+.description {
+    margin: 16px 0 24px 0;
+}
+
+.share-shop-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    padding: 24px;
+}
+
+.share-shop>span {
+    font-weight: 700;
+}
+
+.share-shop-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.media-logo {
+    border: none;
+    padding: 6px;
+    margin: 4px 0;
+    border-radius: 12px;
+}
+footer {
+    display: block;
+    margin-top: 25px;
+    padding: 0 10px;
+}
+
+.footer-mini-copyright-text {
+    display: inline;
+    color: hsla(217.5, 13.79%, 22.75%, .6);
+    font-size: 10px;
+}
+
+.footer-mini-text-with-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-mini-links {
+    display: flex;
+    position: relative;
+    justify-content: flex-end;
+    align-content: center;
+    float: left;
+    font-size: 10px;
+    min-height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.footer-mini-link {
+    margin-left: 16px;
+    color: var(--TEXT-COLOR);
+}
+
+.footer-mini-link:hover {
+    text-decoration: underline;
+}
+@media screen and (min-width: 768px) {
+    .footer-mini-text-with-links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .description-and-share,
+    .item-image-and-description {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+}
+}
