@@ -6,7 +6,6 @@ const { NotFoundError } = require("../errors/index");
 
 const getUserInfo = async (req, res) => {
     const { userID, role } = req.user;
-    console.log(userID, role);
     switch (role) {
         case "customer":
             findUser(req, res, userID, Customer);

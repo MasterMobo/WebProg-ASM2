@@ -18,24 +18,27 @@ const vendorRoutes = require("./routes/vendor");
 const shipperRoutes = require("./routes/shipper");
 const productRoutes = require("./routes/product");
 const orderRoutes = require("./routes/order");
+const hubRoutes = require("./routes/distributionHub");
 
 app.use(express.json()); // Middleware to handle JSON data
 app.use("/api/v1/auth", authRoutes); // Route for login and register
+app.use("/api/v1/hub", hubRoutes);
 app.use("/api/v1/me", jwtAuth, meRoutes);
-app.use("/api/v1/customer",jwtAuth, customerRoutes);
+app.use("/api/v1/customer", jwtAuth, customerRoutes);
 app.use("/api/v1/vendor", jwtAuth, vendorRoutes);
 app.use("/api/v1/shipper", jwtAuth, shipperRoutes);
-app.use("/api/v1/product", productRoutes);
-app.use("/api/v1/order", orderRoutes);
+app.use("/api/v1/product", jwtAuth, productRoutes);
+app.use("/api/v1/order", jwtAuth, orderRoutes);
 
 app.use(errorHandler);
 
 const PORT = process.env.PORT || 3000;
 
 const start = async () => {
-    app.listen(PORT, () => {
+    await app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`);
     });
+    console.log("Connecting to database...");
     await connectDB(process.env.MONGO_URI);
 };
 start();

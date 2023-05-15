@@ -1,7 +1,6 @@
 const Shipper = require("../models/shipper");
 const Order = require("../models/order");
-const { NotFoundError,UnauthorizedError } = require("../errors/index");
-
+const { NotFoundError, UnauthorizedError } = require("../errors/index");
 
 const getShippers = async (req, res) => {
     const shippers = await Shipper.find({});
@@ -9,8 +8,8 @@ const getShippers = async (req, res) => {
         const { password, ...shipperWithoutPassword } = shipper._doc;
         return shipperWithoutPassword;
     });
-    res.status(200).json({ shippersWithoutPassword });
-}
+    res.status(200).json({ shippers: shippersWithoutPassword });
+};
 
 const getShipperId = async (req, res) => {
     const shipper = await Shipper.findById(req.params.id);
@@ -19,18 +18,26 @@ const getShipperId = async (req, res) => {
         throw new NotFoundError("Shipper not found");
     }
     const { password, ...shipperWithoutPassword } = shipper._doc;
-    res.status(200).json({ shipperWithoutPassword });
-}
+    res.status(200).json({ shipper: shipperWithoutPassword });
+};
 
 const updateOrder = async (req, res) => {
-    const {userID, role} = req.user;
+    const { userID, role } = req.user;
+
     if (role !== "shipper") {
         throw new UnauthorizedError("You are not authorized to update orders");
     }
-    const order = await Order.findOneAndUpdate({ _id: req.params.id }, {status: req.body.status}, { new: true });
+
+    // Shippers can only update order status
+    const order = await Order.findOneAndUpdate(
+        { _id: req.params.id },
+        { status: req.body.status },
+        { new: true }
+    );
     if (!order) {
         throw new NotFoundError("Order not found");
     }
+
     res.status(200).json({ order });
 };
 
