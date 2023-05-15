@@ -2,7 +2,7 @@ const Order = require("../models/order");
 
 const getOrders = async (req, res) => {
     const orders = await Order.find({});
-    res.status(200).json({ orders });
+    return res.status(200).json({ orders });
 };
 
 const getOrderId = async (req, res) => {
@@ -16,7 +16,7 @@ const getOrderId = async (req, res) => {
 
 const addOrder = async (req, res) => {
     const order = await Order.create(req.body);
-    res.status(201).json({ order });
+    return res.status(201).json({ order });
 };
 
 const deleteOrder = async (req, res) => {

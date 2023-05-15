@@ -22,9 +22,9 @@ const orderRoutes = require("./routes/order");
 app.use(express.json()); // Middleware to handle JSON data
 app.use("/api/v1/auth", authRoutes); // Route for login and register
 app.use("/api/v1/me", jwtAuth, meRoutes);
-app.use("/api/v1/customer", customerRoutes);
-app.use("/api/v1/vendor", vendorRoutes);
-app.use("/api/v1/shipper", shipperRoutes);
+app.use("/api/v1/customer",jwtAuth, customerRoutes);
+app.use("/api/v1/vendor", jwtAuth, vendorRoutes);
+app.use("/api/v1/shipper", jwtAuth, shipperRoutes);
 app.use("/api/v1/product", productRoutes);
 app.use("/api/v1/order", orderRoutes);
 
