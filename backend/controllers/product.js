@@ -14,7 +14,6 @@ const getProducts = async (req, res) => {
     if (maxPrice) {
         query.price = { ...query.price, $lte: maxPrice };
     }
-    console.log(query);
     const products = await Product.find(query);
     return res.status(200).json({ products });
 };
