@@ -23,6 +23,19 @@ const getCustomerId = async (req, res) => {
     return res.status(200).json({ customer: customerWithoutPassword });
 };
 
+const getCustomerOrders = async (req, res) => {
+    // Get all orders of a customer
+    const { userID, role } = req.user;
+
+    if (role !== "customer") {
+        throw new UnauthorizedError("You are not a customer");
+    }
+
+    const orders = await Order.find({ customerID: userID });
+
+    res.status(200).json({ orders });
+};
+
 const addOrders = async (req, res) => {
     const { userID, role } = req.user;
 
@@ -51,4 +64,10 @@ const deleteOrders = async (req, res) => {
 
     return res.status(200).json({ order });
 };
-module.exports = { getCustomers, getCustomerId, addOrders, deleteOrders };
+module.exports = {
+    getCustomers,
+    getCustomerId,
+    getCustomerOrders,
+    addOrders,
+    deleteOrders,
+};
