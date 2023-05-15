@@ -39,13 +39,14 @@ const addProduct = async (req, res) => {
     if (role !== "vendor") {
         throw new UnauthorizedError("You are not authorized to add a product");
     }
-    const { name, price, imageURL, description } = req.body;
-
+    const { name, price, description } = req.body;
+    const imageURL = req.file.path;
     const product = await Product.create({
         name,
         price,
         imageURL,
         description,
+        imageURL,
         vendorID: userID,
     });
     res.status(201).json({ product });

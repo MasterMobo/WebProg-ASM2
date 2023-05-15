@@ -31,7 +31,6 @@ const login = async (req, res) => {
 
 const register = async (req, res) => {
     const { role, username } = req.body;
-
     const usernameValid = await userNameCheck(username);
     if (usernameValid === false) {
         throw new BadRequestError("Username already taken");
@@ -53,7 +52,11 @@ const register = async (req, res) => {
 };
 
 const registerRole = async (req, res, model) => {
-    const newUser = await model.create(req.body);
+    const imageURL = req.file.path;
+    const newUser = await model.create({
+        ...req.body,
+        profilePicURL: imageURL,
+    });
     return res.status(201).json({ newUser });
 };
 
