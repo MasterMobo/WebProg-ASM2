@@ -9,7 +9,7 @@ const getVendors = async (req, res) => {
         const { password, ...vendorWithoutPassword } = vendor._doc;
         return vendorWithoutPassword;
     });
-    res.status(200).json({ vendors: vendorsWithoutPassword });
+    return res.status(200).json({ vendors: vendorsWithoutPassword });
 };
 
 const getVendorId = async (req, res) => {
@@ -19,7 +19,7 @@ const getVendorId = async (req, res) => {
         throw new NotFoundError("Vendor not found");
     }
     const { password, ...vendorWithoutPassword } = vendor._doc;
-    res.status(200).json({ vendor: vendorWithoutPassword });
+    return res.status(200).json({ vendor: vendorWithoutPassword });
 };
 
 const getVendorProducts = async (req, res) => {
@@ -30,7 +30,7 @@ const getVendorProducts = async (req, res) => {
         throw new NotFoundError("Products not found");
     }
 
-    res.status(200).json({ products });
+    return res.status(200).json({ products });
 };
 
 const addProduct = async (req, res) => {
@@ -49,7 +49,7 @@ const addProduct = async (req, res) => {
         imageURL,
         vendorID: userID,
     });
-    res.status(201).json({ product });
+    return res.status(201).json({ product });
 };
 
 const deleteProduct = async (req, res) => {
@@ -90,7 +90,7 @@ const updateProduct = async (req, res) => {
         throw new NotFoundError("Product not found");
     }
 
-    res.status(200).json({ product });
+    return res.status(200).json({ product });
 };
 
 module.exports = {

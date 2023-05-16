@@ -8,7 +8,7 @@ const getShippers = async (req, res) => {
         const { password, ...shipperWithoutPassword } = shipper._doc;
         return shipperWithoutPassword;
     });
-    res.status(200).json({ shippers: shippersWithoutPassword });
+    return res.status(200).json({ shippers: shippersWithoutPassword });
 };
 
 const getShipperId = async (req, res) => {
@@ -18,7 +18,7 @@ const getShipperId = async (req, res) => {
         throw new NotFoundError("Shipper not found");
     }
     const { password, ...shipperWithoutPassword } = shipper._doc;
-    res.status(200).json({ shipper: shipperWithoutPassword });
+    return res.status(200).json({ shipper: shipperWithoutPassword });
 };
 
 const updateOrder = async (req, res) => {
@@ -38,7 +38,7 @@ const updateOrder = async (req, res) => {
         throw new NotFoundError("Order not found");
     }
 
-    res.status(200).json({ order });
+    return res.status(200).json({ order });
 };
 
 module.exports = { getShippers, getShipperId, updateOrder };

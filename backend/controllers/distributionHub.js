@@ -2,7 +2,7 @@ const Hub = require("../models/distributionHub");
 
 const getHubs = async (req, res) => {
     const hubs = await Hub.find({});
-    res.status(200).json({ hubs });
+    return res.status(200).json({ hubs });
 };
 
 const getHubId = async (req, res) => {
@@ -10,7 +10,7 @@ const getHubId = async (req, res) => {
     if (!hub) {
         throw new NotFoundError("Hub not found");
     }
-    res.status(200).json({ hub });
+    return res.status(200).json({ hub });
 };
 
 module.exports = { getHubs, getHubId };
