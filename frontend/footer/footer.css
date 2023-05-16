@@ -12,10 +12,10 @@ footer {
     gap: 50px;
     background-color: #f2f2f2;
     box-shadow: 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-    bottom: 0;
-    position: absolute;
+    /* bottom: 0;
+    position: absolute; */
     width: 100%;
-    /* height: 600px; */
+    height: 600px;
     box-sizing: border-box;
 }
 
@@ -102,7 +102,8 @@ footer h2 {
 
 @media screen and (max-width: 780px) {
     footer {
-        gap: 15px;
+        gap: 25px;
+        height: 650px;
     }
     .policy {
         justify-content: center;
@@ -117,13 +118,19 @@ footer h2 {
 
     .map {
         gap: 10px;
+        align-items: start;
+        justify-content: center;
+    }
+    .map iframe {
+        width: 70%;
+        height: 200px;
     }
 }
 
 @media screen and (max-width: 375px) {
     footer {
         gap: 25px;
-        height: 700px;
+        height: 900px;
     }
 
     footer h2 {
