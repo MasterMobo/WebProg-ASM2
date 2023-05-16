@@ -1,0 +1,81 @@
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f2f2f2;
+  box-shadow: 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.first_column img {
+  height: 3.125rem; /* 50px / 16px = 3.125rem */
+}
+
+.first_column {
+  text-align: center;
+  margin-left: 1rem;
+}
+
+.payment_method {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.delivery_service {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.policy p {
+  margin: 0;
+}
+
+.social-icons {
+  margin-right: 1rem;
+  text-align: center;
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.icons  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icons img {
+  max-height: 5rem;
+}
+
+.policy {
+  display: wrap;
+  gap: 2%;
+  padding: 5%;
+  padding-left: 12%;
+  font-size: 1.25rem;
+  line-height: 2;
+}
+
+.policy a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.map iframe {
+    max-height: 12.5rem;
+    max-width: 30rem;
+}
+
+
