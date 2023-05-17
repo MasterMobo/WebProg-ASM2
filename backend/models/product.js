@@ -4,7 +4,7 @@ const ProductSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please provide product name"],
         minlenght: 10,
-        maxlength: 20,
+        maxlength: 100,
     },
     price: {
         type: Number,
