@@ -76,19 +76,14 @@ function openFilePicker() {
 // Example code to handle the selected file
 document.getElementById("uploadInput").addEventListener("change", function(event) {
   var file = event.target.files[0];
+  let input_file = document.getElementById("uploadInput");
+  let output_text = document.getElementById("custom_text");
   // Do something with the selected file
-  console.log(file);
+  console.log(file.name);
+  output_text.innerHTML = file.name
+
+
 });
-
-
-
-function showFileName() {
-  const fileName = document.getElementById("uploadInput").value;
-  const customtext = document.getElementById("custom_text");
-  customtext.innerHTML = fileName;
-  
-
-}
 
 
 

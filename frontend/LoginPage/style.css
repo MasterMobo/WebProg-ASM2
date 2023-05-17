@@ -193,23 +193,31 @@ label {
   display: inline-block;
   width: 50%;
   height: 43px;
-  background-color: var(--clr-primary-100);
+  background-color: var(--clr-second-100);
   color: #fff;
   border: none;
   cursor: pointer;
   border-radius: 0.8rem;
   font-size: 0.8rem;
-  margin-bottom: 2rem;
   transition: 0.3s;
 }
 
 .upload-btn:hover {
-  background-color: var(--clr-second-100);
+  background-color: var(--clr-primary-60);
+  color: var(--clr-second-100);
+}
+
+.upload_pic {
+  margin-bottom: 2rem;
+  width: 120%;
 }
 
 #custom_text {
-  margin-left: 5%;
-  color: var(--clr-primary-80)
+  display: static;
+  margin-left: 3%;
+  color: var(--clr-primary-80);
+  line-height: 20%;
+  
 }
 
 .sign-btn {
