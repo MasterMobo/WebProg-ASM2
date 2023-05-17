@@ -18,9 +18,22 @@ header:hover {
   opacity: 1;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  width: 10rem;
+}
+
 .logo img {
-  height: 3.125rem;
-  padding-left: 1.875rem;
+  width: 37px;
+  margin-right: 0.3rem;
+}
+
+.logo h2 {
+  padding-bottom: 0.6rem;
+  letter-spacing: -0.5px;
+  color: var(--clr-second-100);
+  text-align: center;
 }
 
 .nav {
