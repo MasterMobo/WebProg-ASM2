@@ -16,6 +16,12 @@ const ProductSchema = new mongoose.Schema({
         required: false,
         default: null,
     },
+    category: {
+        type: String,
+        required: [true, "Please provide product category"],
+        enum: ["Cats", "Dogs", "Birds", "Fish", "Reptiles", "Others"],
+        default: "Others",
+    },
     description: {
         type: String,
         required: [true, "Please provide product description"],
