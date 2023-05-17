@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
+    <link rel="stylesheet" href="swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../header/header.css">
     <link rel="stylesheet" href="../footer/footer.css">
@@ -92,31 +93,63 @@
                 <div class="hero-header fs-h1">
                     <h1>Lorem Ipsum Something</h1>
                     <h1>Lorem Ipsum Something</h1>
+    <section class="hero swiper mySwiper">
+        <div class="wrapper swiper-wrapper">
+            <div class="slide swiper-slide">
+                <img src="./assets/banner_photo.jpg" alt="" class="image" />
+                <div class="image-data">
+                    <span class="text">Your pets deserve the best!</span>
+                    <h2>
+                        Shop your pets <br />
+                        100% certified foods
+                    </h2>
+                    <a href="#" class="button">About Us</a>
                 </div>
-                <div class="hero-desciprtion fs-h3">
-                    <h3>Lorem Ipsum Something</h3>
+            </div>
+            <div class="slide swiper-slide">
+                <img src="./assets/banner_photo_prop.jpg" alt="" class="image" />
+                <div class="image-data">
+                    <span class="text">We love pets and customers alike!</span>
+                    <h2>
+                        We guarantee compensations <br />
+                        For bad quality products
+                    </h2>
+                    <a href="#" class="button">About Us</a>
                 </div>
-                <a href="#" class="btn btn-primary hero-btn">
-                    Get Started Now
-                </a>
+            </div>
+            <div class="slide swiper-slide">
+                <img src="./assets/banner3.jpg" alt="" class="image" />
+                <div class="image-data">
+                    <span class="text">5 years in service!</span>
+                    <h2>
+                        In 5 years <br />
+                        More Than 500.000 pets served
+                    </h2>
+                    <a href="#" class="button">About Us</a>
+                </div>
             </div>
         </div>
 
-        <img src="./assets/banner_photo.jpg" alt="background-img">
-
+        <div class="swiper-button-next nav-btn"></div>
+        <div class="swiper-button-prev nav-btn"></div>
+        <div class="swiper-pagination"></div>
     </section>
+
 
     <section class="testimonials">
         <h2>testimonial</h2>
         <div class="testi-wrapper">
             <div class="testimonial">
-                <svg class="testimonial-icon" height="800px" width="800px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-	 viewBox="0 0 512 512"  xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#000;}
-</style>
-<g>
-	<path class="st0" d="M324.708,174.596c-12.583-2.092-41.546-2.322-65.932,2.992c-1.562-1.032-3.128-2.099-4.672-3.048
+                <svg class="testimonial-icon" height="800px" width="800px" version="1.1" id="_x32_"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512"
+                    xml:space="preserve">
+                    <style type="text/css">
+                        .st0 {
+                            fill: #000;
+                        }
+                    </style>
+                    <g>
+                        <path class="st0" d="M324.708,174.596c-12.583-2.092-41.546-2.322-65.932,2.992c-1.562-1.032-3.128-2.099-4.672-3.048
 		c-4.714-2.887-9.337-5.328-13.929-7.168c-4.452-1.771-8.891-2.991-13.535-3.236v-0.02c-6.956-0.565-13.709-0.816-19.918-0.816
 		c-9.453,0.014-17.517,0.537-23.493,1.534h0.024c-0.826,0.126-1.732,0.203-2.716,0.203c-5.164,0.062-12.312-2.392-18.797-5.935
 		c-4.372-2.343-9.79-1.102-12.705,2.915L77.86,260.171c-2.424,3.34-2.511,7.866-0.227,11.311c1.806,2.706,3.316,5.515,4.313,8.326
@@ -151,27 +184,29 @@
 		c4.166-0.711,11.592-1.27,20.205-1.255c5.68-0.014,11.928,0.223,18.315,0.739l0.436,0.028c1.569,0.042,4.181,0.6,7.353,1.883
 		l0.718,0.328c-26.728,12.07-64.606,35.292-77.054,39.447c-14.215,4.735-15.404,23.695,16.579,27.244
 		c31.989,3.563,60.419-16.589,67.525-20.131c5.101-2.552,37.508,0.565,55.458,2.531c7.915,7.817,14.853,15.069,19.912,20.55
-		l39.423,48.198l0.174,0.196c5.052,5.85,7.793,10.598,9.348,14.671C366.446,322.874,366.913,326.388,366.923,330.384z"/>
-	<path class="st0" d="M510.641,229.622L415.374,98.233c-2.305-3.187-6.747-3.884-9.927-1.583l-42.198,30.599
+		l39.423,48.198l0.174,0.196c5.052,5.85,7.793,10.598,9.348,14.671C366.446,322.874,366.913,326.388,366.923,330.384z" />
+                        <path class="st0"
+                            d="M510.641,229.622L415.374,98.233c-2.305-3.187-6.747-3.884-9.927-1.583l-42.198,30.599
 		c-3.18,2.301-3.888,6.75-1.58,9.93l95.268,131.389c2.304,3.18,6.746,3.891,9.926,1.59l42.205-30.605
 		C512.242,237.243,512.953,232.801,510.641,229.622z M478.226,241.427c-5.293,3.835-12.705,2.65-16.548-2.643
-		c-3.839-5.292-2.656-12.698,2.643-16.54c5.296-3.842,12.702-2.657,16.544,2.628C484.704,230.172,483.522,237.585,478.226,241.427z"
-		/>
-	<path class="st0" d="M148.757,127.248l-42.206-30.599c-3.173-2.301-7.618-1.604-9.926,1.583L1.354,229.622
+		c-3.839-5.292-2.656-12.698,2.643-16.54c5.296-3.842,12.702-2.657,16.544,2.628C484.704,230.172,483.522,237.585,478.226,241.427z" />
+                        <path class="st0"
+                            d="M148.757,127.248l-42.206-30.599c-3.173-2.301-7.618-1.604-9.926,1.583L1.354,229.622
 		c-2.308,3.18-1.59,7.622,1.583,9.93l42.198,30.605c3.18,2.301,7.621,1.59,9.922-1.59l95.272-131.389
 		C152.637,133.998,151.929,129.549,148.757,127.248z M120.554,141.92c-3.839,5.293-11.248,6.478-16.544,2.636
-		c-5.3-3.835-6.481-11.255-2.64-16.54c3.838-5.3,11.248-6.485,16.544-2.642C123.217,129.215,124.389,136.62,120.554,141.92z"/>
-</g>
-</svg>
+		c-5.3-3.835-6.481-11.255-2.64-16.54c3.838-5.3,11.248-6.485,16.544-2.642C123.217,129.215,124.389,136.62,120.554,141.92z" />
+                    </g>
+                </svg>
                 <h3>We Ensure</h3>
                 <p>lorem Ipsum something</p>
 
             </div>
             <div class="testimonial">
-                <svg class="testimonial-icon" fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                viewBox="0 0 376.064 376.064" xml:space="preserve">
-           <g>
-               <path d="M283.786,175.921c0,0-89.498,0.043-90.358,0.107l-6.022-11.652c-0.793-1.535-2.21-2.653-3.887-3.069
+                <svg class="testimonial-icon" fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1"
+                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    viewBox="0 0 376.064 376.064" xml:space="preserve">
+                    <g>
+                        <path d="M283.786,175.921c0,0-89.498,0.043-90.358,0.107l-6.022-11.652c-0.793-1.535-2.21-2.653-3.887-3.069
                    c-1.676-0.416-3.452-0.089-4.87,0.899L127.2,198.006l-16.253-47.791c15.581-3.045,28.747-11.804,37.585-24.332
                    c1.182,0.152,2.338,0.239,3.453,0.239c12.413,0,20.474-8.699,20.878-9.146c2.226-2.454,2.041-6.249-0.415-8.475
                    c-2.455-2.228-6.25-2.04-8.475,0.414c-0.048,0.053-3.409,3.674-8.763,4.831c2.357-5.649,3.991-11.771,4.77-18.263
@@ -184,16 +219,20 @@
                    c34.049-24.51,79.953-22.013,111.183,5.375l10.172-27.442c1.151-3.106,4.602-4.692,7.711-3.54c3.107,1.151,4.692,4.605,3.541,7.711
                    l-38.055,102.661c-0.872,2.353-3.116,3.914-5.626,3.914L131.37,346.54c0,0-0.001,0-0.002,0c-3.838,0-7.446,1.495-10.161,4.211
                    c-2.715,2.716-4.211,6.327-4.211,10.167c-0.001,7.921,6.447,14.637,14.373,14.638h184.534c1.657,0,3-1.343,3-3V211.038
-                   C318.903,191.675,303.149,175.921,283.786,175.921z"/>
-               <path d="M262.593,162.256c44.734,0,81.13-36.394,81.13-81.128C343.723,36.393,307.328,0,262.593,0
-                   c-44.732,0-81.126,36.393-81.126,81.128C181.467,125.862,217.861,162.256,262.593,162.256z"/>
-           </g>
-           </svg>
+                   C318.903,191.675,303.149,175.921,283.786,175.921z" />
+                        <path d="M262.593,162.256c44.734,0,81.13-36.394,81.13-81.128C343.723,36.393,307.328,0,262.593,0
+                   c-44.732,0-81.126,36.393-81.126,81.128C181.467,125.862,217.861,162.256,262.593,162.256z" />
+                    </g>
+                </svg>
                 <h3>We Friendly</h3>
                 <p>lorem Ipsum something</p>
             </div>
             <div class="testimonial">
-                <svg class="testimonial-icon" fill="#000000" width="800px" height="800px" viewBox="0 0 50 50" version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" overflow="inherit"><path d="M18.48 18.875c2.33-.396 4.058-2.518 4.321-5.053.267-2.578.869-12.938-3.02-12.279-10.088 1.711-9.38 18.702-1.301 17.332zm13.273 0c8.077 1.37 8.785-15.621-1.303-17.333-3.888-.659-3.287 9.701-3.021 12.279.264 2.536 1.994 4.658 4.324 5.054zm-17.417 8.005c0-1.348-.481-2.57-1.256-3.459-1.275-1.666-5.328-5.035-6.323-4.172-2.077 1.806-2.01 6.251-.759 9.481.643 1.796 2.196 3.059 4.011 3.059 2.389 0 4.327-2.198 4.327-4.909zm29.137-7.631c-.993-.863-5.046 2.506-6.321 4.172-.775.889-1.257 2.111-1.257 3.459 0 2.711 1.94 4.909 4.327 4.909 1.816 0 3.37-1.263 4.013-3.059 1.248-3.23 1.317-7.675-.762-9.481zm-8.136 15.277c-3.676-1.833-3.562-5.363-4.398-8.584-.665-2.569-3.02-4.469-5.823-4.469-2.743 0-5.057 1.821-5.779 4.312-.895 3.082-.356 6.67-4.363 8.717-3.255 1.061-4.573 2.609-4.573 6.27 0 2.974 2.553 6.158 5.848 6.554 3.676.554 6.544-.17 8.867-1.494 2.323 1.324 5.189 2.047 8.871 1.494 3.293-.396 5.847-3.568 5.847-6.554-.001-3.741-1.235-5.135-4.497-6.246zm-4.337 4.474h-3.811l.005 4h-4.156l.006-4h-4.044v-4h4.045l-.006-4h4.156l-.005 4h3.81v4z"/></svg>
+                <svg class="testimonial-icon" fill="#000000" width="800px" height="800px" viewBox="0 0 50 50"
+                    version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" overflow="inherit">
+                    <path
+                        d="M18.48 18.875c2.33-.396 4.058-2.518 4.321-5.053.267-2.578.869-12.938-3.02-12.279-10.088 1.711-9.38 18.702-1.301 17.332zm13.273 0c8.077 1.37 8.785-15.621-1.303-17.333-3.888-.659-3.287 9.701-3.021 12.279.264 2.536 1.994 4.658 4.324 5.054zm-17.417 8.005c0-1.348-.481-2.57-1.256-3.459-1.275-1.666-5.328-5.035-6.323-4.172-2.077 1.806-2.01 6.251-.759 9.481.643 1.796 2.196 3.059 4.011 3.059 2.389 0 4.327-2.198 4.327-4.909zm29.137-7.631c-.993-.863-5.046 2.506-6.321 4.172-.775.889-1.257 2.111-1.257 3.459 0 2.711 1.94 4.909 4.327 4.909 1.816 0 3.37-1.263 4.013-3.059 1.248-3.23 1.317-7.675-.762-9.481zm-8.136 15.277c-3.676-1.833-3.562-5.363-4.398-8.584-.665-2.569-3.02-4.469-5.823-4.469-2.743 0-5.057 1.821-5.779 4.312-.895 3.082-.356 6.67-4.363 8.717-3.255 1.061-4.573 2.609-4.573 6.27 0 2.974 2.553 6.158 5.848 6.554 3.676.554 6.544-.17 8.867-1.494 2.323 1.324 5.189 2.047 8.871 1.494 3.293-.396 5.847-3.568 5.847-6.554-.001-3.741-1.235-5.135-4.497-6.246zm-4.337 4.474h-3.811l.005 4h-4.156l.006-4h-4.044v-4h4.045l-.006-4h4.156l-.005 4h3.81v4z" />
+                </svg>
                 <h3>We Care</h3>
                 <p>lorem Ipsum something</p>
             </div>
@@ -226,48 +265,29 @@
         </div>
     </section>
 
-    <section class="previews">
-        <div class="preview">
-            <div class="preview-info">
-                <img src="./assets/product_1.jpg" alt="">
-                <h3>Lorem Ipsum Sum</h3>
-                <p>Lorem Ipsum Longer Than the other somehow someway somewhere something</p>
-            </div>
-            <a class="btn" href="">Add To Cart</a>
-        </div>
-        <div class="preview">
-            <div class="preview-info">
-                <img src="./assets/product_2.jpg" alt="">
-                <h3>Lorem Ipsum Sum</h3>
-                <p>Lorem Ipsum Longer Than the other somehow someway somewhere something</p>
-            </div>
-            <a class="btn" href="">Add To Cart</a>
-        </div>
-        <div class="preview">
-            <div class="preview-info">
-                <img src="./assets/product_3.jpg" alt="">
-                <h3>Lorem Ipsum Sum</h3>
-                <p>Lorem Ipsum Longer Than the other somehow someway somewhere something</p>
-            </div>
-            <a class="btn" href="">Add To Cart</a>
-        </div>
-    </section>
+
 
     <section class="reviews">
         <div class="review">
-            <div class="review first"></div>
-            <h3>Lorem Ipsum Sum</h3>
-            <p>Lorem Ipsum Longer Than the other somehow someway somewhere something</p>
+            <div class="reviewer first"></div>
+            <div class="info">
+                <h3>Lorem Ipsum Sum</h3>
+                <p>Lorem Ipsum Longer Than the other somehow someway somewhere something</p>
+            </div>
         </div>
         <div class="review">
-            <div class="review second"></div>
-            <h3>Lorem Ipsum Sum</h3>
-            <p>Lorem Ipsum Longer Than the other somehow someway somewhere something</p>
+            <div class="reviewer second"></div>
+            <div class="info">
+                <h3>Lorem Ipsum Sum</h3>
+                <p>Lorem Ipsum Longer Than the other somehow someway somewhere something</p>
+            </div>
         </div>
         <div class="review">
-            <div class="review third"></div>
-            <h3>Lorem Ipsum Sum</h3>
-            <p>Lorem Ipsum Longer Than the other somehow someway somewhere something</p>
+            <div class="reviewer third"></div>
+            <div class="info">
+                <h3>Lorem Ipsum Sum</h3>
+                <p>Lorem Ipsum Longer Than the other somehow someway somewhere something</p>
+            </div>
         </div>
     </section>
 
@@ -326,6 +346,25 @@
             </div>
         </div>
     </footer>
+
+    <!-- Swiper JS -->
+    <script src="swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
 </body>
 
 </html>

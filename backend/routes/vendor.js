@@ -7,7 +7,7 @@ const {
 } = require("../controllers/vendor");
 const router = express.Router();
 
-const upload = require("../utils/cloudinaryUpload");
+const upload = require("../middlewares/cloudinaryUpload");
 
 router
     .route("/product")
