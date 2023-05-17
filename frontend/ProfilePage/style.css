@@ -25,24 +25,26 @@
     --fw-reg: 400;
     --fw-semi-bold: 650;
     --fw-bold: 800;
-     /* Colors */
-    --black: rgba(0, 0, 0, 1);
-    --khaki: rgba(255, 220, 130, 1);
-    --white: rgba(255, 255, 255, 1);
-    --LINK-ON-HOVER: #c94343;
-    --LIGHT-GREY: #F7F7F7;
-    --GREY-TEXT-COLOR: rgba(25, 32, 37, .6);
-    --TEXT-COLOR: #192025;
-    --PAYMENT-BORDER: 2px solid #d1d1d1;
-    --BUTTON-BACKGROUND: #04759e;
-    --button-on-hover: #c2c2c2;
+       /* Colors */
+    --clr-primary-100: rgba(255, 116, 32, 1);
+    --clr-primary-80: rgba(255, 116, 32, .8);
+    --clr-primary-60: rgba(255, 116, 32, .6);
+    --clr-primary-40: rgba(255, 116, 32, .4);
+    --clr-primary-20: rgba(255, 116, 32, .2);
+
+    --clr-second-100: rgba(64, 46, 50, 1);
+
+    --clr-accent-100: rgba(196, 252, 240, 1);
+    --clr-accent-80: rgba(196, 252, 240, 0.8);
+    --clr-accent-60: rgba(196, 252, 240, 0.6);
+    --clr-accent-40: rgba(196, 252, 240, 0.4);
+    --clr-accent-20: rgba(196, 252, 240, 0.2);
 }
 body {
     width: 100vw;
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-color:rgba(163, 163, 163, 0.44);
     overflow-x: hidden;
 }
 
@@ -52,91 +54,50 @@ a.visited {
     color: var(--TEXT-COLOR);
 }
 
-.samsung-galaxy-a12{
+.samsung-galaxy-a12 {
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 100px;
 }
+
 
 .header {
     width: 100%;
-    background-color: var(--white);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
+    height: auto;
+    overflow: hidden;
+    position: fixed;
     top: 0;
     z-index: 1000;
 }
 
-.search-filter-add-to-cart-header {
-    display: none;
-}
-
-.menu-icon-and-logo {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 1rem;
-}
-
-.menu-icon {
-    padding: 3.31px 0 5.3px;
-    position: relative;
-    border-top: 2px solid var(--black);
-}
-
-.rectangle-11 {
-    width: 23px;
-    height: 1.77px;
-    background-color: var(--black);
-}
-
-.rectangle-12 {
-    width: 23px;
-    height: 1.77px;
-    background-color: var(--black);
+.footer {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    z-index: 1000;
     position: absolute;
-    left: 0;
-    top: 8.62px;
+    bottom: -600px;
 }
 
-.logo {
-    width: 108px;
-    height: 40px;
-    margin-right: 72px;
-}
-
-.profile-name-and-picture {
-    margin-right: 2rem;
+.billboard {
     display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.profiles-name {
-    height: 17.18px;
-    width: 125px;
-    color: var(--black);
-    position: relative;
-    font-family: var(--inconsolata-10-regular-family);
-    font-size: var(--fs-mobile-medium);
-    font-weight: var(--fw-semi-bold);
-    line-height: var(--inconsolata-10-regular-line-height);
-}
-
-.profile-picture {
-    width: 25px;
-    height: 25px;
-    background-color: rgba(217, 217, 217, 1);
-    border-radius: 50%;
-    border: 1px solid var(--black);
-}
-.frame-7 {
-    height: 131px;
-    background-color: var(--khaki);
+    justify-content: space-between;
+    height: 150px;
+    background-color: var(--clr-primary-100);
     margin-bottom: 19px;
-    padding: 10px;
     align-self: stretch;
+}
+
+.billboard>img {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
 }
 section {
     display: flex;
@@ -165,11 +126,15 @@ section {
     margin-bottom: 3rem;
     margin-right: 1rem;
     margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
 }
 .profile-navigation-button:hover{
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: var(--button-on-hover);
+    color: white;
+    background-color: black;
+    transition: all .2s;
 }
 .profile-content-header{
     width: 100%;
@@ -183,7 +148,7 @@ section {
 .profile-content-wrapper{
     width: 100%;
     height: 100%;
-    background-color: #FFFFFF;
+    background-color: var(--gainsboro);
 }
 .profile-navigation-button > p{
     text-align: center;
@@ -222,11 +187,11 @@ section {
 }
 @media screen and (min-width: 768px) {
     .frame-7{
-        height: 200px;
+        height: 250px;
     }
 }
 @media screen and (min-width: 1028px) {
     .frame-7{
-        height: 300px;
+        height: 350px;
     }
 }
