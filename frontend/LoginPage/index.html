@@ -60,21 +60,69 @@
 
             <div class="actual-form">
               <div class="input-wrap">
-                <input type="text" minlength="4" class="input-field" autocomplete="off" required />
-                <label>Email</label>
-              </div>
-
-              <div class="input-wrap">
                 <input type="email" class="input-field" autocomplete="off" required />
                 <label>Email</label>
+              </div>
+              
+              <div class="input-wrap dropbox">
+                <select id="roles" name="roles" onchange = "showItem(this)">
+                  <option selected="true" hidden disabled>Choose your roles</option>
+                  <option value="Customer">Customer</option>
+                  <option value="Vendor">Vendor</option>
+                  <option value="Shipper">Shipper</option>
+                </select>
+              </div>
+              
+              <div class="input-wrap hide" id="customer_name">
+                <input type="customer_name" class="input-field" autocomplete="off" required />
+                <label>Name</label>
+              </div>
+
+              <div class="input-wrap hide" id="customer_address">
+                <input type="customer_Address" class="input-field" autocomplete="off" required />
+                <label>Address</label>
+              </div>
+
+              <div class="input-wrap hide" id="vendor_name">
+                <input type="vendor_businessName" class="input-field" autocomplete="off" required />
+                <label>Business Name</label>
+              </div>
+
+              <div class="input-wrap hide" id="vendor_address">
+                <input type="vendor_businessAddress" class="input-field" autocomplete="off" required />
+                <label>Business Address</label>
+              </div>
+
+              <div class="input-wrap hide" id="shipper_name">
+                <input type="shipper_name" class="input-field" autocomplete="off" required />
+                <label>Name</label>
+              </div>
+              
+              <div class="input-wrap dropbox hide" id="shipper_distribution">
+                <select id="distribution_hubs" name="distribution_hubs">
+                  <option selected="true" hidden disabled>Distribution Hubs</option>
+                  <option value="HCM">
+                    Ho Chi Minh - 123 Nguyen Van Linh, District 7, Ho Chi Minh City
+                  </option>
+                  <option value="HN">
+                    Ha Noi - 346 Dong Da, Ha Noi 
+                  </option>
+                  <option value="DN">
+                    Da Nang - 789 Ngo Quyen, Son Tra, Da Nang
+                  </option>
+                </select>
               </div>
 
               <div class="input-wrap">
                 <input type="password" minlength="4" class="input-field" autocomplete="off" required />
                 <label>Password</label>
               </div>
-
+              <input type="file" id="uploadInput" accept="image/*" style="display: none;">
+              <button class="upload-btn" onclick="openFilePicker()">Upload Picture</button>
+              <span id="custom_text">No file chosen</span>
               <input type="submit" value="Sign Up" class="sign-btn" />
+              
+             
 
               <p class="text">
                 By signing up, I agree to the

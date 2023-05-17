@@ -37,3 +37,60 @@ function moveSlider() {
 bullets.forEach((bullet) => {
   bullet.addEventListener("click", moveSlider);
 });
+
+
+function showItem(answer) {
+  if (answer.value == "Customer") {
+    document.getElementById("customer_name").classList.remove("hide");
+    document.getElementById("customer_address").classList.remove("hide");
+  }
+  else {
+    document.getElementById("customer_name").classList.add("hide");
+    document.getElementById("customer_address").classList.add("hide");
+  }
+
+  if (answer.value == "Vendor") {
+    document.getElementById("vendor_name").classList.remove("hide");
+    document.getElementById("vendor_address").classList.remove("hide");
+  }
+  else {
+    document.getElementById("vendor_name").classList.add("hide");
+    document.getElementById("vendor_address").classList.add("hide");
+  }
+
+  if (answer.value == "Shipper") {
+    document.getElementById("shipper_name").classList.remove("hide");
+    document.getElementById("shipper_distribution").classList.remove("hide");
+  }
+  else {
+    document.getElementById("shipper_name").classList.add("hide");
+    document.getElementById("shipper_distribution").classList.add("hide");
+  }
+}
+
+function openFilePicker() {
+  var uploadInput = document.getElementById("uploadInput");
+  uploadInput.click();
+}
+
+// Example code to handle the selected file
+document.getElementById("uploadInput").addEventListener("change", function(event) {
+  var file = event.target.files[0];
+  // Do something with the selected file
+  console.log(file);
+});
+
+
+
+function showFileName() {
+  const fileName = document.getElementById("uploadInput").value;
+  const customtext = document.getElementById("custom_text");
+  customtext.innerHTML = fileName;
+  
+
+}
+
+
+
+
+
