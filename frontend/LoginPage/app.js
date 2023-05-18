@@ -38,7 +38,7 @@ bullets.forEach((bullet) => {
     bullet.addEventListener("click", moveSlider);
 });
 
-function showItem(answer) {
+async function showItem(answer) {
     if (answer.value == "customer") {
         document.getElementById("customer_name").classList.remove("hide");
         document.getElementById("customer_name").required = true;
@@ -71,6 +71,7 @@ function showItem(answer) {
             .classList.remove("hide");
         document.getElementById("agreement").classList.remove("hide");
         document.getElementById("shipper_distribution").required = true;
+        await getHubs();
     } else {
         document.getElementById("shipper_distribution").classList.add("hide");
         document.getElementById("shipper_distribution").required = false;
@@ -108,9 +109,9 @@ document
         console.log(Object.fromEntries(formData.entries()));
         const res = await fetch("http://localhost:3000/api/v1/auth/register", {
             method: "POST",
-            headers: {
-                "Content-Type": "multipart/form-data",
-            },
+            // headers: {
+            //     "Content-Type": "multipart/form-data",
+            // },
             body: formData,
         });
         const data = await res.json();
@@ -143,3 +144,21 @@ document
         }
         console.log(data);
     });
+
+const getHubs = async () => {
+    const hubs = document.getElementById("distribution_hubs");
+    const res = await fetch("http://localhost:3000/api/v1/hub", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    });
+    const data = await res.json();
+    console.log(data);
+    data.hubs.forEach((hub) => {
+        const option = document.createElement("option");
+        option.value = hub._id;
+        option.innerHTML = `${hub.name} - ${hub.address}`;
+        hubs.appendChild(option);
+    });
+};
