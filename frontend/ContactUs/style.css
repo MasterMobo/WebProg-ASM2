@@ -1,0 +1,165 @@
+:root {
+    --black: rgba(0, 0, 0, 1);
+    --gainsboro: rgba(217, 217, 217, 1);
+    --khaki: rgba(255, 220, 130, 1);
+    --silver: rgba(191, 178, 178, 1);
+    --transparent-black: rgba(0, 0, 0, 0.44);
+    --white: rgba(255, 255, 255, 1);
+
+    --fs-tablet-large: 1.5rem;
+    --fs-tablet-medium: 1.35rem;
+    --fs-tablet-small: 1.05rem;
+    --fs-tablet-para: 0.96rem;
+
+    --fs-mobile-large: 1.25rem;
+    --fs-mobile-medium: 1.125rem;
+    --fs-mobile-small: 0.875rem;
+    --fs-mobile-para: 0.8rem;
+
+    --fs-desktop-large: 1.8rem;
+    --fs-desktop-medium: 1.62rem;
+    --fs-desktop-small: 1.26rem;
+    --fs-desktop-para: 1.152rem;
+
+    --fw-light: 300;
+    --fw-reg: 400;
+    --fw-semi-bold: 650;
+    --fw-bold: 800;
+    /* Colors */
+    --clr-primary-100: rgba(255, 116, 32, 1);
+    --clr-primary-80: rgba(255, 116, 32, .8);
+    --clr-primary-60: rgba(255, 116, 32, .6);
+    --clr-primary-40: rgba(255, 116, 32, .4);
+    --clr-primary-20: rgba(255, 116, 32, .2);
+
+    --clr-second-100: rgba(64, 46, 50, 1);
+
+    --clr-accent-100: rgba(196, 252, 240, 1);
+    --clr-accent-80: rgba(196, 252, 240, 0.8);
+    --clr-accent-60: rgba(196, 252, 240, 0.6);
+    --clr-accent-40: rgba(196, 252, 240, 0.4);
+    --clr-accent-20: rgba(196, 252, 240, 0.2);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+a,
+a.visited {
+    text-decoration: none;
+    color: var(--TEXT-COLOR);
+}
+
+.samsung-galaxy-a12 {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    align-items: flex-start;
+    top: 100px;
+}
+
+
+.header {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.footer {
+    width: 100%;
+    height: 600px;
+    z-index: 1000;
+    position: relative;
+    bottom: -150px;
+}
+
+.billboard {
+    display: flex;
+    justify-content: space-between;
+    height: 150px;
+    background-color: var(--clr-primary-100);
+    margin-bottom: 19px;
+    align-self: stretch;
+}
+
+.billboard>img {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.contact-us{
+    width: fit-content;
+}
+.form{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: clamp(150px, 400px, 600px);
+    background: #fff;
+    padding: 32px;
+    border: 2px solid black;
+    border-radius: 12px;
+    
+}
+.form > input, .form > textarea{
+    margin: 0 auto 2rem auto;
+    height: 30px;
+    width: clamp(150px, 300px, 600px);
+    border: 1px solid black;
+    transition: all .5s;
+    }
+.form>textarea {
+    resize : none;
+    height: 100px;
+}
+.submit-and-reset {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.submit,
+.reset {
+    margin: 1rem;
+    width: 50%;
+    height: 46px;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    font-size: 20px !important;
+    border: transparent;
+    border-radius: 100px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: var(--clr-primary-80);
+    color: #fff;
+    transition: background-color .15s ease-in-out 0s;
+}
+@media screen and (min-width: 768px) {
+    .billboard, .billboard > img{
+        height: 250px;
+    }
+}
+@media screen and (min-width: 1028px) {
+    .billboard, .billboard > img{
+        height: 350px;
+    }
+}
