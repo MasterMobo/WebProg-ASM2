@@ -82,11 +82,9 @@ document
         output_text.innerHTML = file.name;
     });
 
-document
-    .querySelector(".sign-up-form")
-    .addEventListener("submit", function (event) {
-        event.preventDefault();
-        const form = document.querySelector(".sign-up-form");
-        const formData = new FormData(form);
-        console.log(formData);
-    });
+document.querySelector(".sign-btn").addEventListener("click", function () {
+    console.log("clicked");
+    const signUpForm = document.querySelector(".sign-up-form");
+    const formData = new FormData(signUpForm);
+    console.log(formData);
+});
