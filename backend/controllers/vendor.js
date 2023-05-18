@@ -1,6 +1,10 @@
 const Vendor = require("../models/vendor");
 const Product = require("../models/product");
-const { NotFoundError, UnauthorizedError } = require("../errors/index");
+const {
+    NotFoundError,
+    UnauthorizedError,
+    BadRequestError,
+} = require("../errors/index");
 
 const getVendors = async (req, res) => {
     // Get all vendors
@@ -47,6 +51,10 @@ const addProduct = async (req, res) => {
         throw new UnauthorizedError("You are not authorized to add a product");
     }
     const { name, price, description } = req.body;
+
+    if (!req.file) {
+        throw new BadRequestError("Image is required");
+    }
     const imageURL = req.file.path;
     const product = await Product.create({
         name,

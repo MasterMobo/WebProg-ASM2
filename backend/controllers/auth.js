@@ -51,7 +51,7 @@ const register = async (req, res) => {
 };
 
 const registerRole = async (req, res, model) => {
-    const imageURL = req.file.path;
+    const imageURL = req.file ? req.file.path : null;
     const newUser = await model.create({
         ...req.body,
         profilePicURL: imageURL,
