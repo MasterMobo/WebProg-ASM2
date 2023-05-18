@@ -290,7 +290,7 @@ nav .sub-menu1 li:hover a {
 }
 
 /* Styles for tablets and mobile devices */
-@media (max-width: 1024px) {
+@media (max-width: 1224px) {
 
     /* Hide the regular navigation menu */
     header {
