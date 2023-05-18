@@ -32,8 +32,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-    
+    overflow-x: hidden;    
 }
 
 
@@ -131,7 +130,7 @@ table tr td  {
     font-size: 1.5rem;
 }
 
-.remove-btn {
+.remove-btn, .purchase-btn {
     display: inline-block;
     width: 70%;
     height: 43px;
@@ -146,7 +145,20 @@ table tr td  {
     margin: 0 auto;
   }
   
-  .remove-btn:hover {
+
+  .purchase-btn-wrapper {
+    width: 100%;
+    text-align: right;
+    padding: 0 15% 3% 15%;
+  }
+
+  .purchase-btn {
+    width: 23rem;
+    height: 50px;
+    
+  }
+  
+  .remove-btn:hover, .purchase-btn:hover {
     background-color: var(--clr-second-100);
   }
 
