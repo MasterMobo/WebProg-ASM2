@@ -26,14 +26,23 @@
               <a href="#" class="toggle">Sign up</a>
             </div>
 
+            <div class="input-wrap dropbox">
+              <select id="roles" name="role">
+                <option selected="true" hidden disabled>Choose your roles</option>
+                <option value="Customer">Customer</option>
+                <option value="Vendor">Vendor</option>
+                <option value="Shipper">Shipper</option>
+              </select>
+            </div>
+
             <div class="actual-form">
               <div class="input-wrap">
-                <input type="text" minlength="4" class="input-field" autocomplete="off" required />
-                <label>Email</label>
+                <input type="text" name="username" minlength="4" class="input-field" autocomplete="off" required />
+                <label>Username</label>
               </div>
 
               <div class="input-wrap">
-                <input type="password" minlength="4" class="input-field" autocomplete="off" required />
+                <input type="password" name="password" minlength="4" class="input-field" autocomplete="off" required />
                 <label>Password</label>
               </div>
 
