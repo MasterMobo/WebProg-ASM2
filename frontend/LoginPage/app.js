@@ -41,19 +41,27 @@ bullets.forEach((bullet) => {
 function showItem(answer) {
     if (answer.value == "customer") {
         document.getElementById("customer_name").classList.remove("hide");
+        document.getElementById("customer_name").required = true;
         document.getElementById("customer_address").classList.remove("hide");
+        document.getElementById("customer_address").required = true;
     } else {
         document.getElementById("customer_name").classList.add("hide");
+        document.getElementById("customer_name").required = false;
         document.getElementById("customer_address").classList.add("hide");
+        document.getElementById("customer_address").required = false;
         document.getElementById("agreement").classList.add("hide");
     }
 
     if (answer.value == "vendor") {
         document.getElementById("vendor_name").classList.remove("hide");
+        document.getElementById("vendor_name").required = true;
         document.getElementById("vendor_address").classList.remove("hide");
+        document.getElementById("vendor_address").required = true;
     } else {
         document.getElementById("vendor_name").classList.add("hide");
+        document.getElementById("vendor_name").required = false;
         document.getElementById("vendor_address").classList.add("hide");
+        document.getElementById("vendor_address").required = false;
         document.getElementById("agreement").classList.add("hide");
     }
 
@@ -62,8 +70,10 @@ function showItem(answer) {
             .getElementById("shipper_distribution")
             .classList.remove("hide");
         document.getElementById("agreement").classList.remove("hide");
+        document.getElementById("shipper_distribution").required = true;
     } else {
         document.getElementById("shipper_distribution").classList.add("hide");
+        document.getElementById("shipper_distribution").required = false;
     }
 }
 
