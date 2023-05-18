@@ -5,87 +5,89 @@ const bullets = document.querySelectorAll(".bullets span");
 const images = document.querySelectorAll(".image");
 
 inputs.forEach((inp) => {
-  inp.addEventListener("focus", () => {
-    inp.classList.add("active");
-  });
-  inp.addEventListener("blur", () => {
-    if (inp.value != "") return;
-    inp.classList.remove("active");
-  });
+    inp.addEventListener("focus", () => {
+        inp.classList.add("active");
+    });
+    inp.addEventListener("blur", () => {
+        if (inp.value != "") return;
+        inp.classList.remove("active");
+    });
 });
 
 toggle_btn.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    main.classList.toggle("sign-up-mode");
-  });
+    btn.addEventListener("click", () => {
+        main.classList.toggle("sign-up-mode");
+    });
 });
 
 function moveSlider() {
-  let index = this.dataset.value;
+    let index = this.dataset.value;
 
-  let currentImage = document.querySelector(`.img-${index}`);
-  images.forEach((img) => img.classList.remove("show"));
-  currentImage.classList.add("show");
+    let currentImage = document.querySelector(`.img-${index}`);
+    images.forEach((img) => img.classList.remove("show"));
+    currentImage.classList.add("show");
 
-  const textSlider = document.querySelector(".text-group");
-  textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
+    const textSlider = document.querySelector(".text-group");
+    textSlider.style.transform = `translateY(${-(index - 1) * 2.2}rem)`;
 
-  bullets.forEach((bull) => bull.classList.remove("active"));
-  this.classList.add("active");
+    bullets.forEach((bull) => bull.classList.remove("active"));
+    this.classList.add("active");
 }
 
 bullets.forEach((bullet) => {
-  bullet.addEventListener("click", moveSlider);
+    bullet.addEventListener("click", moveSlider);
 });
 
-
 function showItem(answer) {
-  if (answer.value == "Customer") {
-    document.getElementById("customer_name").classList.remove("hide");
-    document.getElementById("customer_address").classList.remove("hide");
-  }
-  else {
-    document.getElementById("customer_name").classList.add("hide");
-    document.getElementById("customer_address").classList.add("hide");
-  }
+    if (answer.value == "Customer") {
+        document.getElementById("customer_name").classList.remove("hide");
+        document.getElementById("customer_address").classList.remove("hide");
+    } else {
+        document.getElementById("customer_name").classList.add("hide");
+        document.getElementById("customer_address").classList.add("hide");
+    }
 
-  if (answer.value == "Vendor") {
-    document.getElementById("vendor_name").classList.remove("hide");
-    document.getElementById("vendor_address").classList.remove("hide");
-  }
-  else {
-    document.getElementById("vendor_name").classList.add("hide");
-    document.getElementById("vendor_address").classList.add("hide");
-  }
+    if (answer.value == "Vendor") {
+        document.getElementById("vendor_name").classList.remove("hide");
+        document.getElementById("vendor_address").classList.remove("hide");
+    } else {
+        document.getElementById("vendor_name").classList.add("hide");
+        document.getElementById("vendor_address").classList.add("hide");
+    }
 
-  if (answer.value == "Shipper") {
-    document.getElementById("shipper_name").classList.remove("hide");
-    document.getElementById("shipper_distribution").classList.remove("hide");
-  }
-  else {
-    document.getElementById("shipper_name").classList.add("hide");
-    document.getElementById("shipper_distribution").classList.add("hide");
-  }
+    if (answer.value == "Shipper") {
+        document.getElementById("shipper_name").classList.remove("hide");
+        document
+            .getElementById("shipper_distribution")
+            .classList.remove("hide");
+    } else {
+        document.getElementById("shipper_name").classList.add("hide");
+        document.getElementById("shipper_distribution").classList.add("hide");
+    }
 }
 
 function openFilePicker() {
-  var uploadInput = document.getElementById("uploadInput");
-  uploadInput.click();
+    var uploadInput = document.getElementById("uploadInput");
+    uploadInput.click();
 }
 
 // Example code to handle the selected file
-document.getElementById("uploadInput").addEventListener("change", function(event) {
-  var file = event.target.files[0];
-  let input_file = document.getElementById("uploadInput");
-  let output_text = document.getElementById("custom_text");
-  // Do something with the selected file
-  console.log(file.name);
-  output_text.innerHTML = file.name
+document
+    .getElementById("uploadInput")
+    .addEventListener("change", function (event) {
+        var file = event.target.files[0];
+        let input_file = document.getElementById("uploadInput");
+        let output_text = document.getElementById("custom_text");
+        // Do something with the selected file
+        console.log(file.name);
+        output_text.innerHTML = file.name;
+    });
 
-
-});
-
-
-
-
-
+document
+    .querySelector(".sign-up-form")
+    .addEventListener("submit", function (event) {
+        event.preventDefault();
+        const form = document.querySelector(".sign-up-form");
+        const formData = new FormData(form);
+        console.log(formData);
+    });
