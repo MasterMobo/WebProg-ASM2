@@ -1,4 +1,6 @@
 const Order = require("../models/order");
+const Customer = require("../models/customer");
+const DistributionHub = require("../models/distributionHub");
 
 const getOrders = async (req, res) => {
     // Get all orders
@@ -8,7 +10,23 @@ const getOrders = async (req, res) => {
 
 const getOrdersHub = async (req, res) => {
     // Get all orders from a specific hub
-    const orders = await Order.find({ distributionHubId: req.params.hubId });
+    let orders = await Order.find({ distributionHubId: req.params.hubId });
+    orders = await Promise.all(
+        orders.map(async (order) => {
+            // // attach userName and distributionHubName to each order
+            const user = await Customer.findById(order.customerID);
+
+            const distributionHub = await DistributionHub.findById(
+                order.distributionHubId
+            );
+            return {
+                ...order._doc,
+                customerName: user.name,
+                distributionHubName: distributionHub.name,
+            };
+        })
+    );
+
     return res.status(200).json({ orders });
 };
 

@@ -28,9 +28,11 @@ const updateOrder = async (req, res) => {
         throw new UnauthorizedError("You are not authorized to update orders");
     }
 
+    console.log(req.body);
+
     // Shippers can only update order status
-    const order = await Order.findOneAndUpdate(
-        { _id: req.params.id },
+    const order = await Order.findByIdAndUpdate(
+        req.params.id,
         { status: req.body.status },
         { new: true }
     );
