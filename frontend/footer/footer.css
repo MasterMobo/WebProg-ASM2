@@ -10,7 +10,8 @@ footer {
     align-items: center;
     flex-direction: column;
     gap: 50px;
-    background-color: #f2f2f2;
+    background-color: #c0c0c0;
+    color: #000000;
     box-shadow: 0 -0.125rem 0.25rem rgba(0, 0, 0, 0.1);
     /* bottom: 0;
     position: absolute; */
@@ -23,10 +24,12 @@ footer a {
     text-decoration: none;
     white-space: nowrap;
     font-size: 1.2rem;
+    color: #000000;
 }
 
 footer h2 {
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .policy {

@@ -1,22 +1,38 @@
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.625rem;
-    background-color: transparent;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transition: 0.25s;
-    position: sticky;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem;
+  opacity: 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+  transition: 0.25s;
+  position: fixed;
+  width: 100%;
+  max-width: 100vw;
+  z-index: 1000;
 }
 
 header:hover {
     opacity: 1;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  width: 10rem;
+}
+
 .logo img {
-    height: 3.125rem;
-    padding-left: 1.875rem;
+  width: 37px;
+  margin-right: 0.3rem;
+}
+
+.logo h2 {
+  padding-bottom: 0.6rem;
+  letter-spacing: -0.5px;
+  color: var(--clr-second-100);
+  text-align: center;
 }
 
 .nav {
@@ -166,19 +182,20 @@ nav .sub-menu1 li:hover a {
 }
 
 .cart {
-    text-decoration: none;
-    color: #ffffff;
-    background-color: #000000;
-    font-size: 2rem;
-    padding: 0.7rem;
-    border-radius: 50%;
-    height: 1.875rem;
-    width: 1.875rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.25s;
-    text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #000000;
+  font-size: 2rem;
+  padding: 0.7rem;
+  border-radius: 50%;
+  height: 1.875rem;
+  width: 1.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+  text-align: center;
+  box-sizing: content-box;
 }
 
 .cart:hover {
@@ -190,16 +207,17 @@ nav .sub-menu1 li:hover a {
 
 
 #responsive_nav {
-    position: absolute;
-    top: 100%;
-    margin-right: -2%;
-    width: 15rem;
-    height: 130vh;
-    background-color: black;
-    padding: 3rem 1.875rem;
-    border-radius: 0;
-    flex-direction: column;
-    transition: 0.25s;
+  position: absolute;
+  top: 100%;
+  margin-right: -2%;
+  width: 15rem;
+  height: 130vh;
+  background-color: black;
+  padding: 3rem 1.875rem;
+  border-radius: 0;
+  flex-direction: column;
+  transition: 0.25s;
+  box-sizing: content-box;
 }
 
 #responsive_nav ul {
