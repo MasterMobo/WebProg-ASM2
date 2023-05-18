@@ -226,9 +226,7 @@ input:not(#myFile){
     border-radius: 10px;
     margin: 1rem;
 }
-.currency-and-price:hover{
 
-}
 .currency{
     padding-left: 5px;
 }
@@ -237,6 +235,12 @@ input:not(#myFile){
     border: none;
     outline: none;
     height: 35px;
+}
+#Category{
+    margin: 0 auto;
+    width: 92%;
+    height: 50px;
+    border-radius: 10px;
 }
 .product-description{
     max-width: 100%;
@@ -255,7 +259,7 @@ input:not(#myFile){
     resize: none;
 }
 .add-to-cart{
-    margin-top: 2rem;
+    margin: 0 auto;
 }
 .add-to-cart-link {
     height: 46px;
