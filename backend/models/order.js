@@ -9,6 +9,7 @@ const OrderSchema = new mongoose.Schema({
         ref: "Customer",
         required: [true, "Please provide customer ID"],
     },
+
     distributionHubId: {
         // Distribution hub will be automatically picked (randomly) before saving to database
         type: mongoose.Schema.Types.ObjectId,
@@ -27,6 +28,16 @@ const OrderSchema = new mongoose.Schema({
                 ref: "Product",
                 required: [true, "Please provide product ID"],
             },
+            name: {
+                // Product name will be automatically set before saving to database
+                type: String,
+                required: false,
+            },
+            imageURL: {
+                // Image URL will be automatically set before saving to database
+                type: String,
+                required: false,
+            },
             quantity: {
                 type: Number,
                 required: [true, "Please provide quantity"],
@@ -37,7 +48,7 @@ const OrderSchema = new mongoose.Schema({
     totalPrice: {
         // Total price will be automatically calculated before saving to database
         type: Number,
-        required: [false, "Please provide total price"],
+        required: false,
         min: 0,
     },
     status: {
@@ -48,10 +59,14 @@ const OrderSchema = new mongoose.Schema({
     },
 });
 
-// Set customer address before saving to database
+// set imageURL
 OrderSchema.pre("save", async function (next) {
-    const customer = await Customer.findById(this.customerID);
-    this.customerAddress = customer.address;
+    for (let i = 0; i < this.products.length; i++) {
+        const product = this.products[i];
+        const productModel = await Product.findById(product.productID);
+        product.imageURL = productModel.imageURL;
+        product.name = productModel.name;
+    }
     next();
 });
 
@@ -60,6 +75,13 @@ OrderSchema.pre("save", async function (next) {
     const distributionHubs = await DistributionHub.find();
     const randomIndex = Math.floor(Math.random() * distributionHubs.length);
     this.distributionHubId = distributionHubs[randomIndex]._id;
+    next();
+});
+
+// Set customer address before saving to database
+OrderSchema.pre("save", async function (next) {
+    const customer = await Customer.findById(this.customerID);
+    this.customerAddress = customer.address;
     next();
 });
 
