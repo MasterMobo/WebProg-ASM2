@@ -39,7 +39,7 @@ bullets.forEach((bullet) => {
 });
 
 function showItem(answer) {
-    if (answer.value == "customer") {
+    if (answer.value == "Customer") {
         document.getElementById("customer_name").classList.remove("hide");
         document.getElementById("customer_name").required = true;
         document.getElementById("customer_address").classList.remove("hide");
@@ -52,7 +52,7 @@ function showItem(answer) {
         document.getElementById("agreement").classList.add("hide");
     }
 
-    if (answer.value == "vendor") {
+    if (answer.value == "Vendor") {
         document.getElementById("vendor_name").classList.remove("hide");
         document.getElementById("vendor_name").required = true;
         document.getElementById("vendor_address").classList.remove("hide");
@@ -65,7 +65,7 @@ function showItem(answer) {
         document.getElementById("agreement").classList.add("hide");
     }
 
-    if (answer.value == "shipper") {
+    if (answer.value == "Shipper") {
         document
             .getElementById("shipper_distribution")
             .classList.remove("hide");
@@ -99,8 +99,16 @@ document
     .addEventListener("submit", async function (e) {
         e.preventDefault();
         const formData = new FormData(this);
-        // const res = await fetch("localhost:3000/api/v1/register", {
-        // });
+        //Log out entries
+        for (var pair of formData.entries()) {
+            console.log(pair[0] + ", " + pair[1]);
+        }
+        const res = await fetch("localhost:3000/api/v1/register", {
+            method: "POST",
+            body: formData,
+        });
+        const data = await res.json();
+        console.log(data);
     });
 
 // document.querySelector(".sign-btn").addEventListener("click", function () {
