@@ -19,5 +19,9 @@ document
             body: formData,
         });
         const data = await res.json();
+
+        if (res.status == 201) {
+            // Successfully added product
+        }
         console.log(data);
     });
