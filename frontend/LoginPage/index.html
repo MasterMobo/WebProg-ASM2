@@ -29,18 +29,19 @@
                                 <a href="#" class="toggle">Sign up</a>
                             </div>
 
-                            <div class="input-wrap dropbox">
-                                <select id="roles" name="role">
-                                    <option selected="true" hidden disabled>
-                                        Choose your role
-                                    </option>
-                                    <option value="customer">Customer</option>
-                                    <option value="vendor">Vendor</option>
-                                    <option value="shipper">Shipper</option>
-                                </select>
-                            </div>
-
                             <div class="actual-form">
+                                <div class="input-wrap dropbox">
+                                    <select id="roles" name="role">
+                                        <option selected="true" hidden disabled>
+                                            Choose your role
+                                        </option>
+                                        <option value="customer">
+                                            Customer
+                                        </option>
+                                        <option value="vendor">Vendor</option>
+                                        <option value="shipper">Shipper</option>
+                                    </select>
+                                </div>
                                 <div class="input-wrap">
                                     <input
                                         type="text"
@@ -113,11 +114,11 @@
                                         <option selected="true" hidden disabled>
                                             Choose your role
                                         </option>
-                                        <option value="Customer">
+                                        <option value="customer">
                                             Customer
                                         </option>
-                                        <option value="Vendor">Vendor</option>
-                                        <option value="Shipper">Shipper</option>
+                                        <option value="vendor">Vendor</option>
+                                        <option value="shipper">Shipper</option>
                                     </select>
                                 </div>
 
@@ -213,10 +214,7 @@
                                         accept="image/*"
                                         style="display: none"
                                     />
-                                    <button
-                                        class="upload-btn"
-                                        onclick="openFilePicker()"
-                                    >
+                                    <button class="upload-btn">
                                         Upload Picture
                                     </button>
                                     <span id="custom_text">No file chosen</span>

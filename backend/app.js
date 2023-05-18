@@ -1,6 +1,8 @@
 require("dotenv").config(); // Load environment variables into process.env
 require("express-async-errors"); // Handle async errors (this will throw async errors directly to the error handler middleware)
 
+const cors = require("cors");
+
 const express = require("express");
 const app = express();
 
@@ -20,6 +22,7 @@ const productRoutes = require("./routes/product");
 const orderRoutes = require("./routes/order");
 const hubRoutes = require("./routes/distributionHub");
 
+app.use(cors());
 app.use(express.json()); // Middleware to handle JSON data
 app.use("/api/v1/auth", authRoutes); // Route for login and register
 app.use("/api/v1/hub", hubRoutes);

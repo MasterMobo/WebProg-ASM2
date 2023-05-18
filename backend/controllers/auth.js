@@ -12,8 +12,8 @@ const {
 } = require("../errors/index");
 
 const login = async (req, res) => {
-    const { role } = req.body;
-
+    const { role, username, password } = req.body;
+    console.log(role, username, password);
     switch (role) {
         case "vendor":
             await loginRole(req, res, Vendor);

@@ -39,7 +39,7 @@ bullets.forEach((bullet) => {
 });
 
 function showItem(answer) {
-    if (answer.value == "Customer") {
+    if (answer.value == "customer") {
         document.getElementById("customer_name").classList.remove("hide");
         document.getElementById("customer_address").classList.remove("hide");
     } else {
@@ -48,7 +48,7 @@ function showItem(answer) {
         document.getElementById("agreement").classList.add("hide");
     }
 
-    if (answer.value == "Vendor") {
+    if (answer.value == "vendor") {
         document.getElementById("vendor_name").classList.remove("hide");
         document.getElementById("vendor_address").classList.remove("hide");
     } else {
@@ -57,7 +57,7 @@ function showItem(answer) {
         document.getElementById("agreement").classList.add("hide");
     }
 
-    if (answer.value == "Shipper") {
+    if (answer.value == "shipper") {
         document
             .getElementById("shipper_distribution")
             .classList.remove("hide");
@@ -72,15 +72,20 @@ function openFilePicker() {
     uploadInput.click();
 }
 
+document.querySelector(".upload-btn").addEventListener("click", function (e) {
+    e.preventDefault();
+    openFilePicker();
+});
+
 // Example code to handle the selected file
 document
     .getElementById("uploadInput")
     .addEventListener("change", function (event) {
+        event.preventDefault(); // Prevent default form submission
         var file = event.target.files[0];
         let input_file = document.getElementById("uploadInput");
         let output_text = document.getElementById("custom_text");
-        // Do something with the selected file
-        console.log(file.name);
+        // Do things with the selected file
         output_text.innerHTML = file.name;
     });
 
@@ -90,21 +95,34 @@ document
         e.preventDefault();
         const formData = new FormData(this);
         //Log out entries
-        for (var pair of formData.entries()) {
-            console.log(pair[0] + ", " + pair[1]);
-        }
-        const res = await fetch("localhost:3000/api/v1/register", {
+        console.log(Object.fromEntries(formData.entries()));
+        const res = await fetch("http://localhost:3000/api/v1/auth/register", {
             method: "POST",
+            headers: {
+                "Content-Type": "multipart/form-data",
+            },
             body: formData,
         });
         const data = await res.json();
         console.log(data);
     });
 
-// document.querySelector(".sign-btn").addEventListener("click", function () {
-//     console.log("clicked");
-//     const signUpForm = document.querySelector(".sign-up-form");
+document
+    .querySelector(".sign-in-form")
+    .addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        //Log out entries
 
-//     const formData = new FormData(signUpForm);
-//     console.log(formData);
-// });
+        const jsonObj = JSON.stringify(Object.fromEntries(formData.entries()));
+        console.log(jsonObj);
+        const res = await fetch("http://localhost:3000/api/v1/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: jsonObj,
+        });
+        const data = await res.json();
+        console.log(data);
+    });
