@@ -1,181 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Sign in & Sign up Form</title>
-        <link rel="stylesheet" href="../css/login.css">
-    </head>
 
-    <body>
-        <main>
-            <div class="container">
-                <div class="inner-container">
-                    <div class="forms-wrapper">
-                        <form
-                            action="index.html"
-                            autocomplete="off"
-                            class="sign-in-form"
-                        >
-                            <div class="logo">
-                                <img src="../images/logo.png" alt="logo">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in & Sign up Form</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="inner-container">
+                <div class="forms-wrapper">
+                    <form action="index.html" autocomplete="off" class="sign-in-form">
+                        <div class="logo">
+                            <img src="../images/logo.png" alt="logo">
+                        </div>
+
+                        <div class="heading">
+                            <h2>Welcome Back</h2>
+                            <h6>Not registred yet?</h6>
+                            <a href="#" class="toggle">Sign up</a>
+                        </div>
+
+                        <div class="actual-form">
+                            <div class="input-wrap dropbox">
+                                <select id="roles" name="role">
+                                    <option selected="true" hidden disabled>
+                                        Choose your role
+                                    </option>
+                                    <option value="customer">
+                                        Customer
+                                    </option>
+                                    <option value="vendor">Vendor</option>
+                                    <option value="shipper">Shipper</option>
+                                </select>
+                            </div>
+                            <div class="input-wrap">
+                                <input type="text" name="username" minlength="4" class="input-field"
+                                    autocomplete="off" />
+                                <label>Username</label>
                             </div>
 
-                            <div class="heading">
-                                <h2>Welcome Back</h2>
-                                <h6>Not registred yet?</h6>
-                                <a href="#" class="toggle">Sign up</a>
+                            <div class="input-wrap">
+                                <input type="password" name="password" minlength="4" class="input-field"
+                                    autocomplete="off" />
+                                <label>Password</label>
                             </div>
 
-                            <div class="actual-form">
-                                <div class="input-wrap dropbox">
-                                    <select id="roles" name="role">
-                                        <option selected="true" hidden disabled>
-                                            Choose your role
-                                        </option>
-                                        <option value="customer">
-                                            Customer
-                                        </option>
-                                        <option value="vendor">Vendor</option>
-                                        <option value="shipper">Shipper</option>
-                                    </select>
-                                </div>
-                                <div class="input-wrap">
-                                    <input
-                                        type="text"
-                                        name="username"
-                                        minlength="4"
-                                        class="input-field"
-                                        autocomplete="off"
-                                    />
-                                    <label>Username</label>
-                                </div>
+                            <button class="sign-btn sign-in-btn">
+                                Sign In
+                            </button>
 
-                                <div class="input-wrap">
-                                    <input
-                                        type="password"
-                                        name="password"
-                                        minlength="4"
-                                        class="input-field"
-                                        autocomplete="off"
-                                    />
-                                    <label>Password</label>
-                                </div>
+                            <p class="text">
+                                Forgot your password?
+                                <a href="#">Get help</a> signing in
+                            </p>
+                        </div>
+                    </form>
 
-                                <button class="sign-btn sign-in-btn">
-                                    Sign In
-                                </button>
+                    <form action="index.html" autocomplete="off" class="sign-up-form">
+                        <div class="logo">
+                            <img src="../images/logo.png" alt="logo">
+                        </div>
 
-                                <p class="text">
-                                    Forgot your password?
-                                    <a href="#">Get help</a> signing in
-                                </p>
-                            </div>
-                        </form>
+                        <div class="heading">
+                            <h2>Get Started</h2>
+                            <h6>Already have an account?</h6>
+                            <a href="#" class="toggle">Sign in</a>
+                        </div>
 
-                        <form
-                            action="index.html"
-                            autocomplete="off"
-                            class="sign-up-form"
-                        >
-                            <div class="logo">
-                                <img src="../images/logo.png" alt="logo">
+                        <div class="actual-form">
+                            <div class="input-wrap">
+                                <input type="text" class="input-field" name="username" autocomplete="off" />
+                                <label>Username</label>
                             </div>
 
-                            <div class="heading">
-                                <h2>Get Started</h2>
-                                <h6>Already have an account?</h6>
-                                <a href="#" class="toggle">Sign in</a>
+                            <div class="input-wrap dropbox">
+                                <select id="roles" name="role" onchange="showItem(this)">
+                                    <option selected="true" hidden disabled>
+                                        Choose your role
+                                    </option>
+                                    <option value="customer">
+                                        Customer
+                                    </option>
+                                    <option value="vendor">Vendor</option>
+                                    <option value="shipper">Shipper</option>
+                                </select>
                             </div>
 
-                            <div class="actual-form">
-                                <div class="input-wrap">
-                                    <input
-                                        type="text"
-                                        class="input-field"
-                                        name="username"
-                                        autocomplete="off"
-                                    />
-                                    <label>Username</label>
-                                </div>
+                            <div class="input-wrap hide" id="customer_name">
+                                <input type="text" name="name" class="input-field" autocomplete="off" />
+                                <label>Name</label>
+                            </div>
 
-                                <div class="input-wrap dropbox">
-                                    <select
-                                        id="roles"
-                                        name="role"
-                                        onchange="showItem(this)"
-                                    >
-                                        <option selected="true" hidden disabled>
-                                            Choose your role
-                                        </option>
-                                        <option value="customer">
-                                            Customer
-                                        </option>
-                                        <option value="vendor">Vendor</option>
-                                        <option value="shipper">Shipper</option>
-                                    </select>
-                                </div>
+                            <div class="input-wrap hide" id="customer_address">
+                                <input type="text" name="address" class="input-field" autocomplete="off" />
+                                <label>Address</label>
+                            </div>
 
-                                <div class="input-wrap hide" id="customer_name">
-                                    <input
-                                        type="text"
-                                        name="name"
-                                        class="input-field"
-                                        autocomplete="off"
-                                    />
-                                    <label>Name</label>
-                                </div>
+                            <div class="input-wrap hide" id="vendor_name">
+                                <input type="text" name="businessName" class="input-field" autocomplete="off" />
+                                <label>Business Name</label>
+                            </div>
 
-                                <div
-                                    class="input-wrap hide"
-                                    id="customer_address"
-                                >
-                                    <input
-                                        type="text"
-                                        name="address"
-                                        class="input-field"
-                                        autocomplete="off"
-                                    />
-                                    <label>Address</label>
-                                </div>
+                            <div class="input-wrap hide" id="vendor_address">
+                                <input type="text" name="businessAddress" class="input-field" autocomplete="off" />
+                                <label>Business Address</label>
+                            </div>
 
-                                <div class="input-wrap hide" id="vendor_name">
-                                    <input
-                                        type="text"
-                                        name="businessName"
-                                        class="input-field"
-                                        autocomplete="off"
-                                    />
-                                    <label>Business Name</label>
-                                </div>
+                            <div class="input-wrap dropbox hide" id="shipper_distribution">
+                                <select id="distribution_hubs" name="distributionHubId">
+                                    <option selected="true" hidden disabled>
+                                        Distribution Hubs
+                                    </option>
 
-                                <div
-                                    class="input-wrap hide"
-                                    id="vendor_address"
-                                >
-                                    <input
-                                        type="text"
-                                        name="businessAddress"
-                                        class="input-field"
-                                        autocomplete="off"
-                                    />
-                                    <label>Business Address</label>
-                                </div>
-
-                                <div
-                                    class="input-wrap dropbox hide"
-                                    id="shipper_distribution"
-                                >
-                                    <select
-                                        id="distribution_hubs"
-                                        name="distributionHubId"
-                                    >
-                                        <option selected="true" hidden disabled>
-                                            Distribution Hubs
-                                        </option>
-
-                                        <!-- <option value="HCM">
+                                    <!-- <option value="HCM">
                                             Ho Chi Minh - 123 Nguyen Van Linh,
                                             District 7, Ho Chi Minh City
                                         </option>
@@ -186,89 +128,65 @@
                                             Da Nang - 789 Ngo Quyen, Son Tra, Da
                                             Nang
                                         </option> -->
-                                    </select>
-                                </div>
-
-                                <div class="input-wrap">
-                                    <input
-                                        type="password"
-                                        name="password"
-                                        minlength="4"
-                                        class="input-field"
-                                        autocomplete="off"
-                                    />
-                                    <label>Password</label>
-                                </div>
-                                <div class="upload_pic">
-                                    <input
-                                        type="file"
-                                        name="image"
-                                        id="uploadInput"
-                                        accept="image/*"
-                                        style="display: none"
-                                    />
-                                    <button class="upload-btn">
-                                        Upload Picture
-                                    </button>
-                                    <span id="custom_text">No file chosen</span>
-                                </div>
-                                <button
-                                    value="Sign Up"
-                                    class="sign-up-btn sign-btn"
-                                >
-                                    Sign Up
-                                </button>
-
-                                <p class="text" id="agreement">
-                                    By signing up, I agree to the
-                                    <a href="#">Terms of Services</a> and
-                                    <a href="#">Privacy Policy</a>
-                                </p>
+                                </select>
                             </div>
-                        </form>
+
+                            <div class="input-wrap">
+                                <input type="password" name="password" minlength="4" class="input-field"
+                                    autocomplete="off" />
+                                <label>Password</label>
+                            </div>
+                            <div class="upload_pic">
+                                <input type="file" name="image" id="uploadInput" accept="image/*"
+                                    style="display: none" />
+                                <button class="upload-btn">
+                                    Upload Picture
+                                </button>
+                                <span id="custom_text">No file chosen</span>
+                            </div>
+                            <button value="Sign Up" class="sign-up-btn sign-btn">
+                                Sign Up
+                            </button>
+
+                            <p class="text" id="agreement">
+                                By signing up, I agree to the
+                                <a href="#">Terms of Services</a> and
+                                <a href="#">Privacy Policy</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="carousel">
+                    <div class="images-wrapper">
+                        <img src="../images/login/carousel1.png" class="image img-1 show" alt="" />
+                        <img src="../images/login/carousel2.png" class="image img-2" alt="" />
+                        <img src="../images/login/carousel3.png" class="image img-3" alt="" />
                     </div>
 
-                    <div class="carousel">
-                        <div class="images-wrapper">
-                            <img
-                                src="../images/login/carousel1.png"
-                                class="image img-1 show"
-                                alt=""
-                            />
-                            <img
-                                src="../images/login/carousel2.png"
-                                class="image img-2"
-                                alt=""
-                            />
-                            <img
-                                src="../images/login/carousel3.png"
-                                class="image img-3"
-                                alt=""
-                            />
+                    <div class="text-slider">
+                        <div class="text-wrap">
+                            <div class="text-group">
+                                <h2>Your pet deserve the best</h2>
+                                <h2>Multiple options!</h2>
+                                <h2>Free snack every Friday</h2>
+                            </div>
                         </div>
 
-                        <div class="text-slider">
-                            <div class="text-wrap">
-                                <div class="text-group">
-                                    <h2>Your pet deserve the best</h2>
-                                    <h2>Multiple options!</h2>
-                                    <h2>Free snack every Friday</h2>
-                                </div>
-                            </div>
-
-                            <div class="bullets">
-                                <span class="active" data-value="1"></span>
-                                <span data-value="2"></span>
-                                <span data-value="3"></span>
-                            </div>
+                        <div class="bullets">
+                            <span class="active" data-value="1"></span>
+                            <span data-value="2"></span>
+                            <span data-value="3"></span>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
+    </main>
 
-        <!-- Javascript file -->
+    <!-- Javascript file -->
 
-        <script src="../scripts/login.js"></script>
-    </body>
+    <script src="../scripts/login.js"></script>
+</body>
+
 </html>
