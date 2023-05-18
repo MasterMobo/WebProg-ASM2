@@ -161,23 +161,6 @@ const renderOrders = (orders) => {
     document.querySelectorAll(".order-form").forEach((form) => {
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
-            // console.log(e.target.id);
-            // const formData = new FormData(e.target);
-            // const status = formData.get("status");
-            // //Log out entries
-            // console.log(Object.fromEntries(status.entries()));
-            // const res = await fetch(
-            //     `http://localhost:3000/api/v1/order/${e.target.id}`,
-            //     {
-            //         method: "PATCH",
-            //         headers: {
-            //             Authorization: `Bearer ${token}`,
-            //         },
-            //         body: { status },
-            //     }
-            // );
-            // const data = await res.json();
-            // console.log(data);
         });
     });
 };
