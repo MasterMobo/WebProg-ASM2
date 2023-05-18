@@ -1,126 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Shipper Page!</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Shipper Page!</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="../header/header.css" />
+        <link rel="stylesheet" href="../footer/footer.css" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+        />
+        <script src="jquery-3.6.4.min.js"></script>
+    </head>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="../header/header.css">
-    <link rel="stylesheet" href="../footer/footer.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <script src="jquery-3.6.4.min.js"></script>
-
-</head>
-
-<body>
-    <header>
-        <div class="logo">
-            <img src="../LoginPage/img/logo.png" alt="petcung" />
-            <h2>petcung</h2>
-        </div>
-        <nav id="desktop_nav">
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About Us</a></li>
-            <li class="sub-menu-parent"><a href="#">Shop</a>
-              <div class="sub-menu1">
+    <body>
+        <header>
+            <div class="logo">
+                <img src="../LoginPage/img/logo.png" alt="petcung" />
+                <h2>petcung</h2>
+            </div>
+            <nav id="desktop_nav">
                 <ul>
-                  <li><a href="#">Shirt</a></li>
-                  <li><a href="#">Pant</a></li>
-                  <li><a href="#">Shoe</a></li>
-                  <li><a href="#">Watch</a></li>
-                  <li><a href="#">Glass</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li class="sub-menu-parent">
+                        <a href="#">Shop</a>
+                        <div class="sub-menu1">
+                            <ul>
+                                <li><a href="#">Shirt</a></li>
+                                <li><a href="#">Pant</a></li>
+                                <li><a href="#">Shoe</a></li>
+                                <li><a href="#">Watch</a></li>
+                                <li><a href="#">Glass</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Location</a></li>
                 </ul>
-              </div>
-            </li>
-            <li><a href="#">Location</a></li>
-          </ul>
-        </nav>
-        
-        <nav id="responsive_nav" class="close">
-          <div class="search">
-            <i class="fa fa-search"></i>
-            <input type="text" class="search_bar" placeholder="Search" />
-            <button class="bx bx-search"></button>
-          </div>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About Us</a></li>
-            <li class="sub-menu-parent"><a id= "title" href="#">Shop</a>
-              <div class="sub-menu1">
+            </nav>
+
+            <nav id="responsive_nav" class="close">
+                <div class="search">
+                    <i class="fa fa-search"></i>
+                    <input
+                        type="text"
+                        class="search_bar"
+                        placeholder="Search"
+                    />
+                    <button class="bx bx-search"></button>
+                </div>
                 <ul>
-                  <li><a href="#">Shirt</a></li>
-                  <li><a href="#">Pant</a></li>
-                  <li><a href="#">Shoe</a></li>
-                  <li><a href="#">Watch</a></li>
-                  <li><a href="#">Glass</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li class="sub-menu-parent">
+                        <a id="title" href="#">Shop</a>
+                        <div class="sub-menu1">
+                            <ul>
+                                <li><a href="#">Shirt</a></li>
+                                <li><a href="#">Pant</a></li>
+                                <li><a href="#">Shoe</a></li>
+                                <li><a href="#">Watch</a></li>
+                                <li><a href="#">Glass</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Location</a></li>
                 </ul>
-              </div>
-            </li>
-            <li><a href="#">Location</a></li>
-          </ul>
-          <div class="login-register">
-            <button>Log In</button>
-            <button>Register</button>
-          </div>
-        </nav>
-  
-  
-        <div class="desktop search">
-          <i class="fa fa-search"></i>
-          <input type="text" class="search_bar" placeholder="Search" />
-          <button class="bx bx-search"></button>
-        </div>
-  
-        <a href='#' class="cart"><i class='bx bxs-cart'></i></a>
-  
-        <div class="desktop login-register">
-          <button>Log In</button>
-          <button>Register</button>
-        </div>
-  
-        <div class="bx bx-menu" id="menu-icon"></div>
-        
-        
-    </header>
+                <div class="login-register">
+                    <button>Log In</button>
+                    <button>Register</button>
+                </div>
+            </nav>
 
-    <section class="profile">
-        <div class="profile-image">
-            <div class="profile-img-wrapper">
-                <img src="https://i.imgur.com/8Km9tLL.jpg" alt="profile">
+            <div class="desktop search">
+                <i class="fa fa-search"></i>
+                <input type="text" class="search_bar" placeholder="Search" />
+                <button class="bx bx-search"></button>
             </div>
-            <div class="star-wrapper">
-                <a href="#" class="fas fa-star s1"></a>
-                <a href="#" class="fas fa-star s2"></a>
-                <a href="#" class="fas fa-star s3"></a>
-                <a href="#" class="fas fa-star s4"></a>
-                <a href="#" class="fas fa-star s5"></a>
+
+            <a href="#" class="cart"><i class="bx bxs-cart"></i></a>
+
+            <div class="desktop login-register">
+                <button>Log In</button>
+                <button>Register</button>
             </div>
-            <script src="https://kit.fontawesome.com/5ea815c1d0.js"></script>
 
-        </div>
-        <div class="profile-info">
-            <h1>Name Here</h1>
-            <div class="contact-info">
-                <p><i>Contact Info</i></p>
-                <h3>Phone Number Here</h3>
-                <h3>Address Here</h3>
-                <h3>Description Here</h3>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </header>
+
+        <section class="profile">
+            <div class="profile-image">
+                <div class="profile-img-wrapper">
+                    <img src="https://i.imgur.com/8Km9tLL.jpg" alt="profile" />
+                </div>
+                <div class="star-wrapper">
+                    <a href="#" class="fas fa-star s1"></a>
+                    <a href="#" class="fas fa-star s2"></a>
+                    <a href="#" class="fas fa-star s3"></a>
+                    <a href="#" class="fas fa-star s4"></a>
+                    <a href="#" class="fas fa-star s5"></a>
+                </div>
+                <script src="https://kit.fontawesome.com/5ea815c1d0.js"></script>
             </div>
-        </div>
+            <div class="profile-info">
+                <h1>Name Here</h1>
+                <div class="contact-info">
+                    <p><i>Contact Info</i></p>
+                    <h3>Phone Number Here</h3>
+                    <h3>Address Here</h3>
+                    <h3>Description Here</h3>
+                </div>
+            </div>
+        </section>
 
-
-    </section>
-
-    <section class="carousel">
-        <!-- <div class="item-scroller">
+        <section class="carousel">
+            <!-- <div class="item-scroller">
 
             <div class="item">
                 <img src="./images/duck_toy.jpg" alt="toy_image">
@@ -319,127 +324,266 @@
             </div>
 
         </div> -->
-        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="card">
-                    <div class="img-wrapper">
-                        <img src="./images/duck_toy.jpg" class="d-block w-100" alt="...">
+            <div
+                id="carouselExampleControls"
+                class="carousel slide"
+                data-bs-ride="carousel"
+            >
+                <div class="carousel-inner">
+                    <div class="card">
+                        <div class="img-wrapper">
+                            <img
+                                src="./images/duck_toy.jpg"
+                                class="d-block w-100"
+                                alt="..."
+                            />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 2</h5>
+                            <p>Delivery Hub: Lorem Ipsum Something</p>
+                            <p>Customer Name:</p>
+                            <form action="">
+                                <p>Order Status:</p>
+                                 
+                                <input
+                                    type="radio"
+                                    id="active"
+                                    name="status"
+                                    value="Active"
+                                />
+                                  <label for="html">Active</label><br />
+                                 
+                                <input
+                                    type="radio"
+                                    id="delivered"
+                                    name="status"
+                                    value="Delivered"
+                                />
+                                  <label for="css">Delivered</label><br />
+                                 
+                                <input
+                                    type="radio"
+                                    id="cancelled"
+                                    name="status"
+                                    value="Cancelled"
+                                />
+                                  <label for="javascript">Cancelled</label>
+                            </form>
+                            <button class="btn-update">Update</button>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title 2</h5>
-                        <p>Delivery Hub: Lorem Ipsum Something</p>
-                        <p>Customer Name:</p>
-                        <form action="">
-                            <p>Order Status:</p>
-                              <input type="radio" id="active" name="status" value="Active">
-                              <label for="html">Active</label><br>
-                              <input type="radio" id="delivered" name="status" value="Delivered">
-                              <label for="css">Delivered</label><br>
-                              <input type="radio" id="cancelled" name="status" value="Cancelled">
-                              <label for="javascript">Cancelled</label>
-                        </form>
-                        <button class="btn-update">Update</button>
+                    <div class="card">
+                        <div class="img-wrapper">
+                            <img
+                                src="./images/fake_stick.jpg"
+                                class="d-block w-100"
+                                alt="..."
+                            />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 2</h5>
+                            <p>Delivery Hub: Lorem Ipsum Something</p>
+                            <p>Customer Name:</p>
+                            <form action="">
+                                <p>Order Status:</p>
+                                 
+                                <input
+                                    type="radio"
+                                    id="active"
+                                    name="status"
+                                    value="Active"
+                                />
+                                  <label for="html">Active</label><br />
+                                 
+                                <input
+                                    type="radio"
+                                    id="delivered"
+                                    name="status"
+                                    value="Delivered"
+                                />
+                                  <label for="css">Delivered</label><br />
+                                 
+                                <input
+                                    type="radio"
+                                    id="cancelled"
+                                    name="status"
+                                    value="Cancelled"
+                                />
+                                  <label for="javascript">Cancelled</label>
+                            </form>
+                            <button class="btn-update">Update</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-wrapper">
+                            <img
+                                src="./images/rope.jpg"
+                                class="d-block w-100"
+                                alt="..."
+                            />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 2</h5>
+                            <p>Delivery Hub: Lorem Ipsum Something</p>
+                            <p>Customer Name:</p>
+                            <form action="">
+                                <p>Order Status:</p>
+                                 
+                                <input
+                                    type="radio"
+                                    id="active"
+                                    name="status"
+                                    value="Active"
+                                />
+                                  <label for="html">Active</label><br />
+                                 
+                                <input
+                                    type="radio"
+                                    id="delivered"
+                                    name="status"
+                                    value="Delivered"
+                                />
+                                  <label for="css">Delivered</label><br />
+                                 
+                                <input
+                                    type="radio"
+                                    id="cancelled"
+                                    name="status"
+                                    value="Cancelled"
+                                />
+                                  <label for="javascript">Cancelled</label>
+                            </form>
+                            <button class="btn-update">Update</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-wrapper">
+                            <img
+                                src="./images/duck_toy.jpg"
+                                class="d-block w-100"
+                                alt="..."
+                            />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 2</h5>
+                            <p>Delivery Hub: Lorem Ipsum Something</p>
+                            <p>Customer Name:</p>
+                            <form action="">
+                                <p>Order Status:</p>
+                                 
+                                <input
+                                    type="radio"
+                                    id="active"
+                                    name="status"
+                                    value="Active"
+                                />
+                                  <label for="html">Active</label><br />
+                                 
+                                <input
+                                    type="radio"
+                                    id="delivered"
+                                    name="status"
+                                    value="Delivered"
+                                />
+                                  <label for="css">Delivered</label><br />
+                                 
+                                <input
+                                    type="radio"
+                                    id="cancelled"
+                                    name="status"
+                                    value="Cancelled"
+                                />
+                                  <label for="javascript">Cancelled</label>
+                            </form>
+                            <button class="btn-update">Update</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-wrapper">
+                            <img
+                                src="./images/fake_stick.jpg"
+                                class="d-block w-100"
+                                alt="..."
+                            />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 2</h5>
+                            <p>Delivery Hub: Lorem Ipsum Something</p>
+                            <p>Customer Name:</p>
+                            <form action="">
+                                <p>Order Status:</p>
+                                 
+                                <input
+                                    type="radio"
+                                    id="active"
+                                    name="status"
+                                    value="Active"
+                                />
+                                  <label for="html">Active</label><br />
+                                 
+                                <input
+                                    type="radio"
+                                    id="delivered"
+                                    name="status"
+                                    value="Delivered"
+                                />
+                                  <label for="css">Delivered</label><br />
+                                 
+                                <input
+                                    type="radio"
+                                    id="cancelled"
+                                    name="status"
+                                    value="Cancelled"
+                                />
+                                  <label for="javascript">Cancelled</label>
+                            </form>
+                            <button class="btn-update">Update</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="img-wrapper">
+                            <img
+                                src="./images/rope.jpg"
+                                class="d-block w-100"
+                                alt="..."
+                            />
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Card title 2</h5>
+                            <p>Delivery Hub: Lorem Ipsum</p>
+                            <p>Customer Name: Lorem Ipsum Something</p>
+                            <form action="">
+                                <p>Order Status:</p>
+                                 
+                                <input
+                                    type="radio"
+                                    id="active"
+                                    name="status"
+                                    value="Active"
+                                />
+                                  <label for="html">Active</label><br />
+                                 
+                                <input
+                                    type="radio"
+                                    id="delivered"
+                                    name="status"
+                                    value="Delivered"
+                                />
+                                  <label for="css">Delivered</label><br />
+                                 
+                                <input
+                                    type="radio"
+                                    id="cancelled"
+                                    name="status"
+                                    value="Cancelled"
+                                />
+                                  <label for="javascript">Cancelled</label>
+                            </form>
+                            <button class="btn-update">Update</button>
+                        </div>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="img-wrapper"><img src="./images/fake_stick.jpg" class="d-block w-100" alt="..."></div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title 2</h5>
-                        <p>Delivery Hub: Lorem Ipsum Something</p>
-                        <p>Customer Name:</p>
-                        <form action="">
-                            <p>Order Status:</p>
-                              <input type="radio" id="active" name="status" value="Active">
-                              <label for="html">Active</label><br>
-                              <input type="radio" id="delivered" name="status" value="Delivered">
-                              <label for="css">Delivered</label><br>
-                              <input type="radio" id="cancelled" name="status" value="Cancelled">
-                              <label for="javascript">Cancelled</label>
-                        </form>
-                        <button class="btn-update">Update</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img-wrapper">
-                        <img src="./images/rope.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title 2</h5>
-                        <p>Delivery Hub: Lorem Ipsum Something</p>
-                        <p>Customer Name:</p>
-                        <form action="">
-                            <p>Order Status:</p>
-                              <input type="radio" id="active" name="status" value="Active">
-                              <label for="html">Active</label><br>
-                              <input type="radio" id="delivered" name="status" value="Delivered">
-                              <label for="css">Delivered</label><br>
-                              <input type="radio" id="cancelled" name="status" value="Cancelled">
-                              <label for="javascript">Cancelled</label>
-                        </form>
-                        <button class="btn-update">Update</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img-wrapper">
-                        <img src="./images/duck_toy.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title 2</h5>
-                        <p>Delivery Hub: Lorem Ipsum Something</p>
-                        <p>Customer Name:</p>
-                        <form action="">
-                            <p>Order Status:</p>
-                              <input type="radio" id="active" name="status" value="Active">
-                              <label for="html">Active</label><br>
-                              <input type="radio" id="delivered" name="status" value="Delivered">
-                              <label for="css">Delivered</label><br>
-                              <input type="radio" id="cancelled" name="status" value="Cancelled">
-                              <label for="javascript">Cancelled</label>
-                        </form>
-                        <button class="btn-update">Update</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img-wrapper"><img src="./images/fake_stick.jpg" class="d-block w-100" alt="..."></div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title 2</h5>
-                        <p>Delivery Hub: Lorem Ipsum Something</p>
-                        <p>Customer Name:</p>
-                        <form action="">
-                            <p>Order Status:</p>
-                              <input type="radio" id="active" name="status" value="Active">
-                              <label for="html">Active</label><br>
-                              <input type="radio" id="delivered" name="status" value="Delivered">
-                              <label for="css">Delivered</label><br>
-                              <input type="radio" id="cancelled" name="status" value="Cancelled">
-                              <label for="javascript">Cancelled</label>
-                        </form>
-                        <button class="btn-update">Update</button>
-
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="img-wrapper">
-                        <img src="./images/rope.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Card title 2</h5>
-                        <p>Delivery Hub: Lorem Ipsum </p>
-                        <p>Customer Name: Lorem Ipsum Something</p>
-                        <form action="">
-                            <p>Order Status:</p>
-                              <input type="radio" id="active" name="status" value="Active">
-                              <label for="html">Active</label><br>
-                              <input type="radio" id="delivered" name="status" value="Delivered">
-                              <label for="css">Delivered</label><br>
-                              <input type="radio" id="cancelled" name="status" value="Cancelled">
-                              <label for="javascript">Cancelled</label>
-                        </form>
-                        <button class="btn-update">Update</button>
-                    </div>
-                </div>
-            </div>
-            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -449,72 +593,80 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button> -->
-        </div>
-
-        <footer>
-            <div class="policy">
-                <a href="#">About Us</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Use</a>
-                <a>© 2023 All Rights Reserved</a>
             </div>
-    
-            <div class="all-img-section-wrapper">
-                <div class="img-section-wrapper">
-                    <h2>Payment Method</h2>
-                    <div class="img-wrapper">
-                        <img src="../images/visa.png" alt="visa" />
-                        <img src="../images/mastercard.png" alt="mastercard" />
-                        <img src="../images/momo.png" alt="momo" />
-                        <img src="../images/zalopay.png" alt="zalopay" />
+
+            <footer>
+                <div class="policy">
+                    <a href="#">About Us</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a>© 2023 All Rights Reserved</a>
+                </div>
+
+                <div class="all-img-section-wrapper">
+                    <div class="img-section-wrapper">
+                        <h2>Payment Method</h2>
+                        <div class="img-wrapper">
+                            <img src="../images/visa.png" alt="visa" />
+                            <img
+                                src="../images/mastercard.png"
+                                alt="mastercard"
+                            />
+                            <img src="../images/momo.png" alt="momo" />
+                            <img src="../images/zalopay.png" alt="zalopay" />
+                        </div>
+                    </div>
+
+                    <div class="img-section-wrapper">
+                        <h2>Delivery</h2>
+                        <div class="img-wrapper">
+                            <img src="../images/vnpost.png" alt="vnpost" />
+                            <img
+                                src="../images/viettelpost.png"
+                                alt="viettelpost"
+                            />
+                            <img src="../images/GHN.png" alt="GHN" />
+                        </div>
+                    </div>
+
+                    <div class="img-section-wrapper">
+                        <a href="#"><h2>Contact Us</h2></a>
+                        <div class="img-wrapper">
+                            <img src="../images/facebook.png" alt="facebook" />
+                            <img
+                                src="../images/messenger.png"
+                                alt="messenger"
+                            />
+                            <img src="../images/gmail.png" alt="gmail" />
+                        </div>
                     </div>
                 </div>
-    
-                <div class="img-section-wrapper">
-                    <h2>Delivery</h2>
-                    <div class="img-wrapper">
-                        <img src="../images/vnpost.png" alt="vnpost" />
-                        <img src="../images/viettelpost.png" alt="viettelpost" />
-                        <img src="../images/GHN.png" alt="GHN" />
+
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62719.356859873355!2d106.69332277944525!3d10.737581490986127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752560b050b093%3A0x6dcb89c51055ccc9!2zUXXhuq1uIDcsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1684215800903!5m2!1svi!2s"
+                        width="600"
+                        height="450"
+                        style="border: 0"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                    <div class="location-desc">
+                        <h2>Visit our HQ</h2>
+                        <p>33 Nguyen Huu Tho, District 7, Ho Chi Minh City</p>
+                        <p>Working hours: 9AM-10PM Mon-Sat</p>
                     </div>
                 </div>
-    
-                <div class="img-section-wrapper">
-                    <a href="#"><h2>Contact Us</h2></a>
-                    <div class="img-wrapper">
-                        <img src="../images/facebook.png" alt="facebook" />
-                        <img src="../images/messenger.png" alt="messenger" />
-                        <img src="../images/gmail.png" alt="gmail" />
-                    </div>
-                </div>
-            </div>
-    
-            <div class="map">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62719.356859873355!2d106.69332277944525!3d10.737581490986127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752560b050b093%3A0x6dcb89c51055ccc9!2zUXXhuq1uIDcsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1684215800903!5m2!1svi!2s"
-                    width="600"
-                    height="450"
-                    style="border: 0"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                ></iframe>
-                <div class="location-desc">
-                    <h2>Visit our HQ</h2>
-                    <p>33 Nguyen Huu Tho, District 7, Ho Chi Minh City</p>
-                    <p>Working hours: 9AM-10PM Mon-Sat</p>
-                </div>
-            </div>
-        </footer>
-    
-    </section>
+            </footer>
+        </section>
 
-    <script src="app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-</body>
-
-
-
+        <script src="shipperPage.js"></script>
+        <script src="app.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>
