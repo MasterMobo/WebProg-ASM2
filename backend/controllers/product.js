@@ -2,11 +2,14 @@ const Product = require("../models/product");
 const { NotFoundError, UnauthorizedError } = require("../errors/index");
 
 const getProducts = async (req, res) => {
-    const { name, minPrice, maxPrice } = req.query;
+    const { name, minPrice, maxPrice, category } = req.query;
 
     let query = {};
     if (name) {
         query.name = { $regex: name, $options: "i" };
+    }
+    if (category) {
+        query.category = { $regex: category, $options: "i" };
     }
     if (minPrice) {
         query.price = { $gte: minPrice };

@@ -24,6 +24,13 @@ const getVendorId = async (req, res) => {
 
 const getVendorProducts = async (req, res) => {
     // Get all products of a vendor
+
+    const { role } = req.user;
+
+    if (role !== "vendor") {
+        throw new UnauthorizedError("You are not a vendor");
+    }
+
     const products = await Product.find({ vendorID: req.user.userID });
 
     if (!products) {
