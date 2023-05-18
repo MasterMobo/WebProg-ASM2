@@ -138,6 +138,8 @@ document
         if (res.status == 200) {
             // Store token in local storage
             localStorage.setItem("token", data.token);
+            // store user in local storage
+            localStorage.setItem("user", JSON.stringify(data.user));
         }
         console.log(data);
     });

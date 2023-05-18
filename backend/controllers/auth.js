@@ -13,7 +13,6 @@ const {
 
 const login = async (req, res) => {
     const { role, username, password } = req.body;
-    console.log(role, username, password);
     switch (role) {
         case "vendor":
             await loginRole(req, res, Vendor);
@@ -57,7 +56,8 @@ const registerRole = async (req, res, model) => {
         ...req.body,
         profilePicURL: imageURL,
     });
-    return res.status(201).json({ newUser });
+    const { password, ...userWithoutPassword } = newUser._doc;
+    return res.status(201).json({ user: userWithoutPassword });
 };
 
 const loginRole = async (req, res, model) => {
@@ -81,7 +81,11 @@ const loginRole = async (req, res, model) => {
         }
     );
 
-    return res.status(200).json({ message: "Login success", token });
+    const { password: pass, ...userWithoutPassword } = foundUser._doc;
+
+    return res
+        .status(200)
+        .json({ message: "Login success", token, user: userWithoutPassword });
 };
 
 module.exports = { login, register };
