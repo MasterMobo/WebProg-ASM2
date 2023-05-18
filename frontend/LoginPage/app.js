@@ -45,6 +45,7 @@ function showItem(answer) {
     } else {
         document.getElementById("customer_name").classList.add("hide");
         document.getElementById("customer_address").classList.add("hide");
+        document.getElementById("agreement").classList.add("hide");
     }
 
     if (answer.value == "Vendor") {
@@ -53,15 +54,13 @@ function showItem(answer) {
     } else {
         document.getElementById("vendor_name").classList.add("hide");
         document.getElementById("vendor_address").classList.add("hide");
+        document.getElementById("agreement").classList.add("hide");
     }
 
     if (answer.value == "Shipper") {
-        document.getElementById("shipper_name").classList.remove("hide");
-        document
-            .getElementById("shipper_distribution")
-            .classList.remove("hide");
+        document.getElementById("shipper_distribution").classList.remove("hide");
+        document.getElementById("agreement").classList.remove("hide");
     } else {
-        document.getElementById("shipper_name").classList.add("hide");
         document.getElementById("shipper_distribution").classList.add("hide");
     }
 }
