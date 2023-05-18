@@ -39,7 +39,7 @@ bullets.forEach((bullet) => {
 });
 
 function showItem(answer) {
-    if (answer.value == "Customer") {
+    if (answer.value == "customer") {
         document.getElementById("customer_name").classList.remove("hide");
         document.getElementById("customer_address").classList.remove("hide");
     } else {
@@ -48,7 +48,7 @@ function showItem(answer) {
         document.getElementById("agreement").classList.add("hide");
     }
 
-    if (answer.value == "Vendor") {
+    if (answer.value == "vendor") {
         document.getElementById("vendor_name").classList.remove("hide");
         document.getElementById("vendor_address").classList.remove("hide");
     } else {
@@ -57,8 +57,10 @@ function showItem(answer) {
         document.getElementById("agreement").classList.add("hide");
     }
 
-    if (answer.value == "Shipper") {
-        document.getElementById("shipper_distribution").classList.remove("hide");
+    if (answer.value == "shipper") {
+        document
+            .getElementById("shipper_distribution")
+            .classList.remove("hide");
         document.getElementById("agreement").classList.remove("hide");
     } else {
         document.getElementById("shipper_distribution").classList.add("hide");
@@ -82,9 +84,19 @@ document
         output_text.innerHTML = file.name;
     });
 
-document.querySelector(".sign-btn").addEventListener("click", function () {
-    console.log("clicked");
-    const signUpForm = document.querySelector(".sign-up-form");
-    const formData = new FormData(signUpForm);
-    console.log(formData);
-});
+document
+    .querySelector(".sign-up-form")
+    .addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        // const res = await fetch("localhost:3000/api/v1/register", {
+        // });
+    });
+
+// document.querySelector(".sign-btn").addEventListener("click", function () {
+//     console.log("clicked");
+//     const signUpForm = document.querySelector(".sign-up-form");
+
+//     const formData = new FormData(signUpForm);
+//     console.log(formData);
+// });
