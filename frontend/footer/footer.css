@@ -90,6 +90,7 @@ footer h2 {
     height: 50%;
     gap: 70px;
 }
+
 .map iframe {
     width: 70%;
     height: 100%;
@@ -108,10 +109,12 @@ footer h2 {
         gap: 25px;
         height: 650px;
     }
+
     .policy {
         justify-content: center;
         gap: 1rem;
     }
+
     .all-img-section-wrapper {
         flex-direction: column;
         justify-content: center;
@@ -124,6 +127,7 @@ footer h2 {
         align-items: start;
         justify-content: center;
     }
+
     .map iframe {
         width: 70%;
         height: 200px;
@@ -139,12 +143,14 @@ footer h2 {
     footer h2 {
         font-size: 1.5rem;
     }
+
     .policy {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 1rem;
     }
+
     .all-img-section-wrapper {
         flex-direction: column;
         justify-content: center;
