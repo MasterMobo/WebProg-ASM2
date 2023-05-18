@@ -1,52 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vendor</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vendor</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <div class="samsung-galaxy-a12">
-        <iframe class="header" src="../header/header.html" frameborder="0"></iframe>
-        <div class="billboard">
-            <img src="../serviceImages/Billboard Images/billboard image.jpg" alt="billboard image">
-            <img src="../serviceImages/Billboard Images/billboard image2.jpg" alt="billboard image">
-        </div>
-        <div class="vendor-buttons">
-            <a href="../VendorPage/index.html">
-                <div class="vendor-button">
-                    <p>View Products</p>
-                </div>
-            </a>
-            <a href="index.html">
-                <div class="vendor-button">
-                    <p>Add New Products</p>
-                </div>
-            </a>
-        </div>
-        <section>
-            <h1 class="product-header">Add New Product</h1> 
-                <form action="" method="get" class="add-product-wrapper">
+    <body>
+        <div class="samsung-galaxy-a12">
+            <iframe
+                class="header"
+                src="../header/header.html"
+                frameborder="0"
+            ></iframe>
+            <div class="billboard">
+                <img
+                    src="../serviceImages/Billboard Images/billboard image.jpg"
+                    alt="billboard image"
+                />
+                <img
+                    src="../serviceImages/Billboard Images/billboard image2.jpg"
+                    alt="billboard image"
+                />
+            </div>
+            <div class="vendor-buttons">
+                <a href="../VendorPage/index.html">
+                    <div class="vendor-button">
+                        <p>View Products</p>
+                    </div>
+                </a>
+                <a href="index.html">
+                    <div class="vendor-button">
+                        <p>Add New Products</p>
+                    </div>
+                </a>
+            </div>
+            <section>
+                <h1 class="product-header">Add New Product</h1>
+                <form action="#" class="add-product-form">
                     <div class="product-image-and-name">
                         <div class="product-image">
-                            <input type="file" id="myFile" name="filename" accept="image/*">
+                            <input
+                                type="file"
+                                id="myFile"
+                                name="filename"
+                                accept="image/*"
+                            />
                             <label for="myFile">
-                                <img src="../logo/target.png" alt="upload button">
+                                <img
+                                    src="../logo/target.png"
+                                    alt="upload button"
+                                />
                             </label>
                         </div>
                         <div class="product-input">
-                            <input type="text" id="product-name" name="product-name" placeholder="Name: ">
+                            <input
+                                type="text"
+                                id="product-name"
+                                name="product-name"
+                                placeholder="Name: "
+                            />
                             <div class="currency-and-price">
                                 <span class="currency">VND</span>
-                                <input type="number" id="product-price" name="product-price" placeholder="How much?">
+                                <input
+                                    type="number"
+                                    id="product-price"
+                                    name="product-price"
+                                    placeholder="How much?"
+                                />
                             </div>
                         </div>
                     </div>
-                    <select name="Pet category" id="Category" aria-placeholder="Type">
+                    <select
+                        name="Pet category"
+                        id="Category"
+                        aria-placeholder="Type"
+                    >
                         <option value="Cats">Cats</option>
                         <option value="Dogs">Dogs</option>
                         <option value="Birds">Birds</option>
@@ -55,15 +86,24 @@
                         <option value="Others">Others</option>
                     </select>
                     <div class="product-description">
-                        <textarea name="product description" id="product-description" cols="30" rows="10" placeholder="Description"></textarea>
+                        <textarea
+                            name="product description"
+                            id="product-description"
+                            cols="30"
+                            rows="10"
+                            placeholder="Description"
+                        ></textarea>
                     </div>
                     <div class="add-to-cart">
-                        <input type="submit" class="add-to-cart-link">
+                        <input type="submit" class="add-to-cart-link" />
                     </div>
                 </form>
-        </section>
-        <iframe class="footer" src="../footer/footer.html" frameborder="0"></iframe>
-    </div>
-</body>
-
+            </section>
+            <iframe
+                class="footer"
+                src="../footer/footer.html"
+                frameborder="0"
+            ></iframe>
+        </div>
+    </body>
 </html>
