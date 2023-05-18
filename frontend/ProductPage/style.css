@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 :root {
     --fs-tablet-large: 1.5rem;
     --fs-tablet-medium: 1.35rem;
@@ -63,6 +64,9 @@
     --inconsolata-17-regular-size: 17px;
     --inconsolata-17-regular-weight: 400;
     --inconsolata-17-regular-line-height: normal;
+}
+*{
+    font-family: "Poppins", sans-serif;
 }
 body {
     margin: 0;
