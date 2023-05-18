@@ -29,8 +29,8 @@ const updateOrder = async (req, res) => {
     }
 
     // Shippers can only update order status
-    const order = await Order.findOneAndUpdate(
-        { _id: req.params.id },
+    const order = await Order.findByIdAndUpdate(
+        req.params.id,
         { status: req.body.status },
         { new: true }
     );

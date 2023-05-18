@@ -103,7 +103,7 @@ const renderOrders = (orders) => {
                 type="radio"
                 id="active"
                 name="status"
-                value="Active"
+                value="active"
                 ${order.status === "active" ? "checked" : ""}
             />
               <label for="html">Active</label><br />
@@ -112,7 +112,7 @@ const renderOrders = (orders) => {
                 type="radio"
                 id="delivered"
                 name="status"
-                value="Delivered"
+                value="delivered"
                 ${order.status === "delivered" ? "checked" : ""}
             />
               <label for="css">Delivered</label><br />
@@ -121,7 +121,7 @@ const renderOrders = (orders) => {
                 type="radio"
                 id="cancelled"
                 name="status"
-                value="Cancelled"
+                value="cancelled"
                 ${order.status === "cancelled" ? "checked" : ""}
             />
               <label for="javascript">Cancelled</label>
@@ -135,20 +135,21 @@ const renderOrders = (orders) => {
     document.querySelectorAll(".btn-update").forEach((btn) => {
         btn.addEventListener("click", async (e) => {
             e.preventDefault();
-            console.log(e.target.form);
             const formData = new FormData(e.target.form);
-            const status = formData.get("status");
-            console.log(e.target.form.id);
+            // const status = formData.get("status");
+            // convert formData to object
+            const dataObj = Object.fromEntries(formData.entries());
+            console.log(dataObj);
             //Log out entries
-            console.log(Object.fromEntries(formData.entries()));
+            // console.log(Object.fromEntries(formData.entries()));
             const res = await fetch(
-                `http://localhost:3000/api/v1/order/${e.target.form.id}`,
+                `http://localhost:3000/api/v1/shipper/order/${e.target.form.id}`,
                 {
                     method: "PATCH",
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
-                    body: { status },
+                    body: { status: dataObj.status },
                 }
             );
             const data = await res.json();
