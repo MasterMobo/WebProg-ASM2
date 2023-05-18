@@ -134,5 +134,10 @@ document
             body: jsonObj,
         });
         const data = await res.json();
+
+        if (res.status == 200) {
+            // Store token in local storage
+            localStorage.setItem("token", data.token);
+        }
         console.log(data);
     });
