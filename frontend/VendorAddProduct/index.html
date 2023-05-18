@@ -9,86 +9,85 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="../header/header.css">
     <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 
 <body>
     <div class="samsung-galaxy-a12">
-        <noscript>You need to enable JavaScript to run this app.</noscript>
-        <div id="root"></div>
-        <header>
-            <div class="logo">
-                <img src="../images/logo.png" alt="petcung" />
-            </div>
-            <nav id="desktop_nav">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li class="sub-menu-parent"><a href="#">Shop</a>
-                        <div class="sub-menu1">
-                            <ul>
-                                <li><a href="#">Cats</a></li>
-                                <li><a href="#">Dogs</a></li>
-                                <li><a href="#">Birds</a></li>
-                                <li><a href="#">Fishes</a></li>
-                                <li><a href="#">Reptiles</a></li>
-                                <li><a href="#">Others</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="#">Location</a></li>
-                </ul>
-            </nav>
-        
-            <nav id="responsive_nav" class="close">
-                <div class="search">
-                    <i class="fa fa-search"></i>
-                    <input type="text" class="search_bar" placeholder="Search" />
-                    <button class="bx bx-search"></button>
-                </div>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li class="sub-menu-parent"><a id="title" href="#">Shop</a>
-                        <div class="sub-menu1">
-                            <ul>
-                                <li><a href="#">Shirt</a></li>
-                                <li><a href="#">Pant</a></li>
-                                <li><a href="#">Shoe</a></li>
-                                <li><a href="#">Watch</a></li>
-                                <li><a href="#">Glass</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="#">Location</a></li>
-                </ul>
-                <div class="login-register">
-                    <button>Log In</button>
-                    <button>Register</button>
-                </div>
-            </nav>
-        
-        
-            <div class="desktop search">
+    <header>
+        <div class="logo">
+            <img src="../images/logo.png" alt="petcung" />
+        </div>
+        <nav id="desktop_nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About Us</a></li>
+                <li class="sub-menu-parent"><a href="#">Shop</a>
+                    <div class="sub-menu1">
+                        <ul>
+                            <li><a href="#">Cats</a></li>
+                            <li><a href="#">Dogs</a></li>
+                            <li><a href="#">Birds</a></li>
+                            <li><a href="#">Fishes</a></li>
+                            <li><a href="#">Reptiles</a></li>
+                            <li><a href="#">Others</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Location</a></li>
+            </ul>
+        </nav>
+    
+        <nav id="responsive_nav" class="close">
+            <div class="search">
                 <i class="fa fa-search"></i>
                 <input type="text" class="search_bar" placeholder="Search" />
                 <button class="bx bx-search"></button>
             </div>
-        
-            <a href='#' class="cart"><i class='bx bxs-cart'></i></a>
-        
-            <div class="desktop login-register">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About Us</a></li>
+                <li class="sub-menu-parent"><a id="title" href="#">Shop</a>
+                    <div class="sub-menu1">
+                        <ul>
+                            <li><a href="#">Shirt</a></li>
+                            <li><a href="#">Pant</a></li>
+                            <li><a href="#">Shoe</a></li>
+                            <li><a href="#">Watch</a></li>
+                            <li><a href="#">Glass</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Location</a></li>
+            </ul>
+            <div class="login-register">
                 <button>Log In</button>
                 <button>Register</button>
             </div>
-        
-            <div class="bx bx-menu" id="menu-icon"></div>
-        
-        
-        </header>
-        
-        <script src="header.js"></script>
+        </nav>
+    
+    
+        <div class="desktop search">
+            <i class="fa fa-search"></i>
+            <input type="text" class="search_bar" placeholder="Search" />
+            <button class="bx bx-search"></button>
+        </div>
+    
+        <a href='#' class="cart"><i class='bx bxs-cart'></i></a>
+    
+        <div class="desktop login-register">
+            <button>Log In</button>
+            <button>Register</button>
+        </div>
+    
+        <div class="bx bx-menu" id="menu-icon"></div>
+    
+    
+    </header>
+    
+    <script src="header.js"></script>
         <div class="billboard">
             <img src="../serviceImages/Billboard Images/billboard image.jpg" alt="billboard image">
             <img src="../serviceImages/Billboard Images/billboard image2.jpg" alt="billboard image">
@@ -109,7 +108,7 @@
             <h1 class="product-header">Add New Product</h1> 
                 <form action="" method="get" class="add-product-wrapper">
                     <div class="product-image-and-name">
-                        <div class="product-image">
+                        <div id="product-image">
                             <input type="file" id="myFile" name="filename" accept="image/*">
                             <label for="myFile">
                                 <img src="../logo/target.png" alt="upload button">
@@ -194,6 +193,7 @@
             </div>
         </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
