@@ -136,20 +136,20 @@ const renderOrders = (orders) => {
         btn.addEventListener("click", async (e) => {
             e.preventDefault();
             const formData = new FormData(e.target.form);
-            // const status = formData.get("status");
-            // convert formData to object
-            const dataObj = Object.fromEntries(formData.entries());
-            console.log(dataObj);
-            //Log out entries
-            // console.log(Object.fromEntries(formData.entries()));
+
+            const dataObj = JSON.stringify(
+                Object.fromEntries(formData.entries())
+            );
+
             const res = await fetch(
                 `http://localhost:3000/api/v1/shipper/order/${e.target.form.id}`,
                 {
                     method: "PATCH",
                     headers: {
                         Authorization: `Bearer ${token}`,
+                        "Content-Type": "application/json",
                     },
-                    body: { status: dataObj.status },
+                    body: dataObj,
                 }
             );
             const data = await res.json();
