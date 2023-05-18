@@ -96,7 +96,6 @@ document
         var file = event.target.files[0];
         let input_file = document.getElementById("uploadInput");
         let output_text = document.getElementById("custom_text");
-        // Do things with the selected file
         output_text.innerHTML = file.name;
     });
 

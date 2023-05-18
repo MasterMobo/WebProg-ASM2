@@ -4,9 +4,16 @@ if (!token) {
     // window.location.href = "/login";
 }
 
-const start = async () => {
+const renderShipper = () => {
+    // Get user from local storage
+    const user = localStorage.getItem("user");
+    console.log(JSON.parse(user));
+};
+
+const start = () => {
     // get user from local storage
     const user = localStorage.getItem("user");
+    renderShipper();
     console.log(user);
 };
 start();

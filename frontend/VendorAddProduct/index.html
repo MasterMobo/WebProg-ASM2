@@ -42,12 +42,7 @@
                 <form action="#" class="add-product-form">
                     <div class="product-image-and-name">
                         <div class="product-image">
-                            <input
-                                type="file"
-                                id="myFile"
-                                name="filename"
-                                accept="image/*"
-                            />
+                            <input type="file" id="myFile" name="image" />
                             <label for="myFile">
                                 <img
                                     src="../logo/target.png"
@@ -59,7 +54,7 @@
                             <input
                                 type="text"
                                 id="product-name"
-                                name="product-name"
+                                name="name"
                                 placeholder="Name: "
                             />
                             <div class="currency-and-price">
@@ -67,17 +62,20 @@
                                 <input
                                     type="number"
                                     id="product-price"
-                                    name="product-price"
+                                    name="price"
                                     placeholder="How much?"
                                 />
                             </div>
                         </div>
                     </div>
                     <select
-                        name="Pet category"
+                        name="category"
                         id="Category"
                         aria-placeholder="Type"
                     >
+                        <option selected hidden disabled>
+                            Choose item category
+                        </option>
                         <option value="Cats">Cats</option>
                         <option value="Dogs">Dogs</option>
                         <option value="Birds">Birds</option>
@@ -87,7 +85,7 @@
                     </select>
                     <div class="product-description">
                         <textarea
-                            name="product description"
+                            name="description"
                             id="product-description"
                             cols="30"
                             rows="10"
@@ -105,5 +103,6 @@
                 frameborder="0"
             ></iframe>
         </div>
+        <script src="VendorAddProduct.js"></script>
     </body>
 </html>
