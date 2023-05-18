@@ -82,7 +82,6 @@ a.visited {
     position: absolute;
     flex-direction: column;
     align-items: flex-start;
-    top: 100px;
 }
 
 
@@ -316,3 +315,4 @@ section {
         display: grid;
         grid-template: repeat(2, 1fr) / repeat(3, 1fr);
     }
+}

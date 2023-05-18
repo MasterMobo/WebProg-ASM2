@@ -1,4 +1,4 @@
-:root{
+:root {
     --black: rgba(0, 0, 0, 1);
     --gainsboro: rgba(217, 217, 217, 1);
     --khaki: rgba(255, 220, 130, 1);
@@ -25,7 +25,7 @@
     --fw-reg: 400;
     --fw-semi-bold: 650;
     --fw-bold: 800;
-       /* Colors */
+    /* Colors */
     --clr-primary-100: rgba(255, 116, 32, 1);
     --clr-primary-80: rgba(255, 116, 32, .8);
     --clr-primary-60: rgba(255, 116, 32, .6);
@@ -40,6 +40,7 @@
     --clr-accent-40: rgba(196, 252, 240, 0.4);
     --clr-accent-20: rgba(196, 252, 240, 0.2);
 }
+
 body {
     width: 100vw;
     height: 100vh;
@@ -56,7 +57,6 @@ a.visited {
 
 .samsung-galaxy-a12 {
     width: 100%;
-    overflow: hidden;
     display: flex;
     position: absolute;
     flex-direction: column;
@@ -76,10 +76,9 @@ a.visited {
 .footer {
     width: 100%;
     height: 600px;
-    overflow: hidden;
     z-index: 1000;
-    position: absolute;
-    bottom: -600px;
+    position: relative;
+    bottom: -150px;
 }
 
 .billboard {
@@ -98,99 +97,72 @@ a.visited {
     height: 150px;
     object-fit: contain;
 }
-section {
+section{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    max-width: 1024px;
-    height: auto;
-    margin: 0 auto 0 auto;
-}
-.profile-navigation-bar-and-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    height: 100%;
-    margin: 0 5rem 0 5rem;
-}
-.profile-navigation-bar{
-    display: flex;
-    justify-content: center;
-}
-.profile-navigation-button{
-    width: 100px;
-    height: 35px;
-    border-radius: 50px;
-    margin-bottom: 3rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    transition: all .2s;
 }
-.profile-navigation-button:hover{
-    color: white;
-    background-color: black;
-    transition: all .2s;
+.contact-us{
+    width: fit-content;
 }
-.profile-content-header{
-    width: 100%;
-    height: 100%;
+.form{
     display: flex;
+    position: relative;
     flex-direction: column;
+    width: clamp(150px, 400px, 600px);
+    background: #fff;
+    padding: 32px;
+    border: 2px solid black;
+    border-radius: 12px;
+    
 }
-.profile-content-header > h2{
-    margin-right: auto;
+.form > input, .form > textarea{
+    margin: 0 auto 2rem auto;
+    height: 30px;
+    width: clamp(150px, 300px, 600px);
+    border: 1px solid black;
+    transition: all .5s;
+    }
+.form>textarea {
+    resize : none;
+    height: 100px;
 }
-.profile-content-wrapper{
+.submit-and-reset {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     width: 100%;
-    height: 100%;
-    background-color: var(--gainsboro);
 }
-.profile-navigation-button > p{
-    text-align: center;
-    margin-top: 7px;
-}
-.profile-content{
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    justify-items: center;
+.submit,
+.reset {
+    margin: 1rem;
+    width: 50%;
+    height: 46px;
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    font-size: 20px !important;
+    border: transparent;
+    border-radius: 100px !important;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    cursor: pointer;
+    background: var(--clr-primary-80);
+    color: #fff;
+    transition: background-color .15s ease-in-out 0s;
 }
-#profile-picture{
-    width: 150px;
-    height: 150px;
-    background: gray;
-    border-radius: 100%;
-    margin: 0 auto 0 auto;
-}
-.profile-picture-and-name{
-    width: 100%;
-    height: auto;
-    border-right: 1px solid black;
-}
-.profile-picture-and-name > h2, .profile-picture-and-name > p{
-    text-align: center;
-}
-.logout:hover{
-    color: var(--LINK-ON-HOVER)
-}
-.profile-information{
-    width: 100%;
-    height: 300px;
-    margin-left: 3rem;
+.submit:hover, .reset:hover{
+    background: var(--clr-primary-100);
+    transition: background-color .15s ease-in-out 0s;   
 }
 @media screen and (min-width: 768px) {
-    .frame-7{
+    .billboard, .billboard > img{
         height: 250px;
     }
 }
 @media screen and (min-width: 1028px) {
-    .frame-7{
+    .billboard, .billboard > img{
         height: 350px;
     }
 }
