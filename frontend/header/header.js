@@ -15,3 +15,16 @@ function redirectFunction() {
 document.querySelector(".btn-log").addEventListener("click", redirectFunction);
 
 hamburger_menu();
+
+function showMyAccount() {
+    var token = localStorage.getItem('token'); // Access the token value from the response data
+
+  if (token !== "") {
+    document.getElementById("login").classList.add("close");
+    document.getElementById("register").classList.add("close");
+    document.getElementById("my-account").classList.remove("close");
+    document.getElementById("logout").classList.remove("close");
+  }
+}
+
+showMyAccount();
