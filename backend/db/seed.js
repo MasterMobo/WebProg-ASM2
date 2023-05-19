@@ -10,7 +10,7 @@ const start = async () => {
     await connectDB(process.env.MONGO_URI);
     // await cleansedb();
     // await populateDB();
-}
+};
 
 start();
 
@@ -19,6 +19,7 @@ const Order = require("../models/order");
 const Product = require("../models/product");
 const Vendor = require("../models/vendor");
 const DistributionHub = require("../models/distributionHub");
+const Shipper = require("../models/shipper");
 
 const cleansedb = async () => {
     await Customer.deleteMany({});
@@ -26,8 +27,9 @@ const cleansedb = async () => {
     await Product.deleteMany({});
     await Vendor.deleteMany({});
     await DistributionHub.deleteMany({});
+    await Shipper.deleteMany({});
     console.log("Cleaned DB");
-}
+};
 
 const populateDB = async () => {
     await DistributionHub.insertMany([
