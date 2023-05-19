@@ -150,6 +150,7 @@ nav li:hover a {
 
 .sub-menu1 {
     display: none;
+    z-index: 1000;
 }
 
 nav .sub-menu-parent:hover .sub-menu1 {

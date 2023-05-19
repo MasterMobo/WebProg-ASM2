@@ -115,6 +115,13 @@ document
         });
         const data = await res.json();
         console.log(data);
+        if (res.status >= 200 && res.status < 300) {
+            window.location.href = "../pages/login.html";
+            alert('Account created successfully');
+        } else {
+            // show error
+            alert(data.message);
+        }
     });
 
 document
@@ -127,7 +134,7 @@ document
         const jsonObj = JSON.stringify(Object.fromEntries(formData.entries()));
         console.log(jsonObj);
         const res = await fetch("http://localhost:3000/api/v1/auth/login", {
-            method: "POST",
+            method:      "POST",
             headers: {
                 "Content-Type": "application/json",
             },
@@ -135,13 +142,29 @@ document
         });
         const data = await res.json();
 
-        if (res.status == 200) {
+        if (res.status >= 200 && res.status < 300) {
             // Store token in local storage
             localStorage.setItem("token", data.token);
             // store user in local storage
             localStorage.setItem("user", JSON.stringify(data.user));
         }
         console.log(data);
+
+        if (res.status == 200) {
+            // redirect to dashboard
+            if (data.user.role == "customer") {
+                window.location.href = "../pages/customerPage.html";
+            }
+            if (data.user.role == "vendor") {
+                window.location.href = "../pages/VendorPage/vendor.html";
+            }
+            if (data.user.role == "shipper") {
+                window.location.href = "../pages/ShipperPage/shipperPage.html";
+            }
+        } else {
+            // show error
+            alert(data.message);
+        }
     });
 
 const getHubs = async () => {
@@ -161,3 +184,5 @@ const getHubs = async () => {
         hubs.appendChild(option);
     });
 };
+
+
