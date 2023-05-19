@@ -18,7 +18,8 @@ const renderShipper = async () => {
             },
         }
     );
-    const hub = await distributionHub.json();
+    const hub = (await distributionHub.json()).hub;
+
     const shipperContainer = document.querySelector(".profile");
     shipperContainer.innerHTML = "";
     const shipperPhoto = document.createElement("div");
