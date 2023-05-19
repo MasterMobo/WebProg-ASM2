@@ -169,7 +169,7 @@
             <img src="../../serviceImages/Billboard Images/billboard image2.jpg" alt="billboard image">
         </div>
         <div class="vendor-buttons">
-            <a href="../VendorPage/index.html">
+            <a href="../VendorPage/vendor.html">
                 <div class="vendor-button">
                     <p>View Products</p>
                 </div>
@@ -182,24 +182,24 @@
         </div>
         <section>
             <h1 class="product-header">Add New Product</h1>
-            <form action="" method="get" class="add-product-wrapper">
+            <form class="add-product-wrapper">
                 <div class="product-image-and-name">
                     <div id="product-image">
-                        <input required="true" type="file" id="myFile" name="filename" accept="image/*">
+                        <input required="true" type="file" id="myFile" name="image" accept="image/*">
                         <label for="myFile">
                             <img src="../../logo/target.png" alt="upload button">
                         </label>
                     </div>
                     <div class="product-input">
-                        <input required="true" type="text" id="product-name" name="product-name" placeholder="Name: ">
+                        <input required="true" type="text" id="product-name" name="name" placeholder="Name: ">
                         <div class="currency-and-price">
-                            <span class="currency">VND</span>
-                            <input required="true" type="number" id="product-price" name="product-price"
+                            <span class="currency">USD</span>
+                            <input required="true" type="number" id="product-price" name="price"
                                 placeholder="How much?">
                         </div>
                     </div>
                 </div>
-                <select name="Pet category" id="Category" aria-placeholder="Type">
+                <select name="category" id="Category" aria-placeholder="Type">
                     <option value="Cats">Cats</option>
                     <option value="Dogs">Dogs</option>
                     <option value="Birds">Birds</option>
@@ -208,7 +208,7 @@
                     <option value="Others">Others</option>
                 </select>
                 <div class="product-description">
-                    <textarea name="product description" id="product-description" cols="30" rows="10"
+                    <textarea name="description" id="product-description" cols="30" rows="10"
                         placeholder="Description"></textarea>
                 </div>
                 <div class="add-to-cart">
@@ -272,6 +272,7 @@
         </footer>
     </div>
     <script src="script.js"></script>
+    <script src="VendorAddProduct.js"></script>
 </body>
 
 </html>

@@ -8,6 +8,8 @@ const connectDB = async (uri) => {
 };
 const start = async () => {
     await connectDB(process.env.MONGO_URI);
+    // await cleansedb();
+    // await populateDB();
 }
 
 start();
@@ -28,5 +30,19 @@ const cleansedb = async () => {
 }
 
 const populateDB = async () => {
-
+    await DistributionHub.insertMany([
+        {
+            "name": "Ho Chi Minh",
+            "address": "3 Nguyen Tat Thanh, Phuong 12, Ward 4, Ho Chi Minh"
+        },
+        {
+            "name": "Hanoi",
+            "address": "838 Bach Dang, Thanh Long, Hai Ba Trung, Ha Noi"
+        },
+        {
+            "name": "Da Nang",
+            "address": "26 Bach Dang, Hai Chau, Da Nang"
+        }
+    ]);
+    console.log("Populated DB");
 }

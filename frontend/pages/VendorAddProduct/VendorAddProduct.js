@@ -4,10 +4,10 @@ if (!token) {
     // window.location.href = "/login";
 }
 
+
 document
     .querySelector(".add-product-wrapper")
     .addEventListener("submit", async function (e) {
-        alert("Successfully added product");
         e.preventDefault();
         const formData = new FormData(this);
         //Log out entries
@@ -23,6 +23,8 @@ document
 
         if (res.status == 201) {
             // Successfully added product
+            // console.log("Successfully added product");
+            alert("Successfully added product");
         }
         console.log(data);
     });
