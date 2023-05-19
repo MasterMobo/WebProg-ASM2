@@ -6,11 +6,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product</title>
-    <link rel="stylesheet" href="./css/productPage.css" />
+    <link rel="stylesheet" href="./css/productPage.css"/>
+    <link rel="stylesheet" href="../header/header.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 
 <body>
-    <iframe class="header" src="../header/header.html" frameborder="0"></iframe>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <header>
+        <div class="logo">
+            <img src="../images/logo.png" alt="petcung" />
+        </div>
+        <nav id="desktop_nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+                <li><a href="#">About Us</a></li>
+                <li class="sub-menu-parent"><a href="../pages/login.html">Shop</a>
+                    <div class="sub-menu1">
+                        <ul>
+                            <li><a href="#">Cats</a></li>
+                            <li><a href="#">Dogs</a></li>
+                            <li><a href="#">Birds</a></li>
+                            <li><a href="#">Fishes</a></li>
+                            <li><a href="#">Reptiles</a></li>
+                            <li><a href="#">Others</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#footer">Location</a></li>
+            </ul>
+        </nav>
+    
+        <nav id="responsive_nav" class="close">
+            <div class="search">
+                <i class="fa fa-search"></i>
+                <input type="text" class="search_bar" placeholder="Search" />
+                <button class="bx bx-search"></button>
+            </div>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
+                <li><a href="#">About Us</a></li>
+                <li class="sub-menu-parent"><a id="title" href="#">Shop</a>
+                    <div class="sub-menu1">
+                        <ul>
+                            <li><a href="#">Cats</a></li>
+                            <li><a href="#">Dogs</a></li>
+                            <li><a href="#">Birds</a></li>
+                            <li><a href="#">Fishes</a></li>
+                            <li><a href="#">Reptiles</a></li>
+                            <li><a href="#">Others</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#footer">Location</a></li>
+            </ul>
+            <div class="login-register">
+                <a class="btn-log" href="../pages/login.html"><button>Log In</button></a>
+                <a href="../pages/login.html"><button>Register</button> </a>
+            </div>
+        </nav>
+    
+    
+        <div class="desktop search">
+            <i class="fa fa-search"></i>
+            <input type="text" class="search_bar" placeholder="Search" />
+            <button class="bx bx-search"></button>
+        </div>
+    
+        <a href='#' class="cart"><i class='bx bxs-cart'></i></a>
+    
+        <div class="desktop login-register">
+            <a href="../pages/login.html"><button>Log In</button></a>
+            <a href="../pages/login.html"><button>Register</button> </a>
+        </div>
+    
+        <div class="bx bx-menu" id="menu-icon"></div>
+    
+    
+    </header>
+    <script src="./header.js"></script>
     <div class="samsung-galaxy-a12">
         <section>
             <div class="item-information">
@@ -163,7 +240,60 @@
                 </div>
             </a>
         </div>
-        <iframe class="footer" src="../footer/footer.html" frameborder="0"></iframe>
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="root"></div>
+        <footer>
+            <div class="policy">
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+                <a>© 2023 All Rights Reserved</a>
+            </div>
+        
+            <div class="all-img-section-wrapper">
+                <div class="img-section-wrapper">
+                    <h2>Payment Method</h2>
+                    <div class="img-wrapper">
+                        <img src="../images/footer/visa.png" alt="visa" />
+                        <img src="../images/footer/mastercard.png" alt="mastercard" />
+                        <img src="../images/footer/momo.png" alt="momo" />
+                        <img src="../images/footer/zalopay.png" alt="zalopay" />
+                    </div>
+                </div>
+        
+                <div class="img-section-wrapper">
+                    <h2>Delivery</h2>
+                    <div class="img-wrapper">
+                        <img src="../images/footer/vnpost.png" alt="vnpost" />
+                        <img src="../images/footer/viettelpost.png" alt="viettelpost" />
+                        <img src="../images/footer/GHN.png" alt="GHN" />
+                    </div>
+                </div>
+        
+                <div class="img-section-wrapper">
+                    <a href="#">
+                        <h2>Contact Us</h2>
+                    </a>
+                    <div class="img-wrapper">
+                        <img src="../images/footer/facebook.png" alt="facebook" />
+                        <img src="../images/footer/messenger.png" alt="messenger" />
+                        <img src="../images/footer/gmail.png" alt="gmail" />
+                    </div>
+                </div>
+            </div>
+        
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62719.356859873355!2d106.69332277944525!3d10.737581490986127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752560b050b093%3A0x6dcb89c51055ccc9!2zUXXhuq1uIDcsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1684215800903!5m2!1svi!2s"
+                    width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="location-desc">
+                    <h2>Visit our HQ</h2>
+                    <p>33 Nguyen Huu Tho, District 7, Ho Chi Minh City</p>
+                    <p>Working hours: 9AM-10PM Mon-Sat</p>
+                </div>
+            </div>
+        </footer>
     </div>
     <script src="../scripts/productPage.js"></script>
 </body>
