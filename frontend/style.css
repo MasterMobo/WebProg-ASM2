@@ -152,16 +152,25 @@ a.button:hover {
     width: 100vw;
     display: flex;
     flex-direction: column;
-    height: 22rem;
+    height: 30rem;
     background-color: rgba(255, 0, 0, 0.1);
+    text-align: center;
+
+    background-color: var(--clr-primary-40);
+    color: var(--clr-second-100);
 }
 
 .testimonial {
-  height: 10rem;
+  display: flex;
+  flex-direction: column;
+}
+.testimonial {
+  height: 20rem;
   width: 8rem;
 }
 
 .testimonial-icon {
+  
   width: 100%;
   height: 100%;
 }
@@ -180,20 +189,24 @@ a.button:hover {
     text-align: center;
 }
 
-.multi-media {
+/* .multi-media {
   display: grid;
   color: var(--clr-second-100);
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 23rem);
+  grid-template-rows: repeat(1, 1fr);
 }
 .mobile {
   display: none;
+}
+.box {
+  width: 100%;
+  height: 100%;
 }
 .multi-media iframe {
   min-width: 100vw;
   min-height: 100%;
   border: none;
-}
+} */
 
 
 
@@ -204,8 +217,10 @@ a.button:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
-  background-color: beige;
-  overflow: hidden ;
+  background-color: var(--clr-primary-60);
+  overflow: hidden;
+  text-align: center;
+  color: var(--clr-second-100);
 }
 .review {
   /* height: 15rem; */
@@ -225,7 +240,7 @@ a.button:hover {
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background-image: url(./assets/review_pic_1.jpeg);
+  background-image: url(./landing/assets/review_pic_1.jpeg);
   background-size: cover;
 }
 
@@ -233,14 +248,14 @@ a.button:hover {
   width: 100%;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background-image: url(./assets/review_pic_2.jpeg);
+  background-image: url(./landing/assets/review_pic_2.jpeg);
   background-size: cover;
 }
 .third {
   width: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  background-image: url(./assets/review_pic_3.jpeg);
+  background-image: url(./landing/assets/review_pic_3.jpeg);
   background-size: cover;
 }
 
@@ -301,19 +316,22 @@ a.button:hover {
 
 @media only screen and (max-width: 767px) {
   .testimonials {
-    height: 52rem;
+    height: 85rem;
   }
   .testi-wrapper {
     padding-top: var(--util-margin);
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    row-gap: 4rem;
+    row-gap: 2rem;
+  }
+  .testimonial {
+    height: 23rem;
   }
   .multi-media {
     text-align: center;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(2, 23rem);
+    grid-template-rows: repeat(1, 1fr);
     row-gap: calc(var(--util-margin) * 4);
     padding-bottom: 10rem;
   }
