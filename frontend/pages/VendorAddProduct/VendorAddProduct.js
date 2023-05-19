@@ -5,8 +5,9 @@ if (!token) {
 }
 
 document
-    .querySelector(".add-product-form")
+    .querySelector(".add-product-wrapper")
     .addEventListener("submit", async function (e) {
+        alert("Successfully added product");
         e.preventDefault();
         const formData = new FormData(this);
         //Log out entries
