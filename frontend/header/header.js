@@ -8,11 +8,20 @@ const hamburger_menu = () => {
   };
 };
 
-function redirectFunction() {
-  location.href("https://www.tutorialspoint.com/index.htm");
+function logout() {
+  document.querySelector("#logout").addEventListener("click", function () {
+    localStorage.setItem("token", "");
+    localStorage.removeItem("user");
+});
+  document.querySelector("#res-logout").addEventListener("click", function () {
+    localStorage.setItem("token", "");
+    localStorage.removeItem("user");
+});
 }
 
-document.querySelector(".btn-log").addEventListener("click", redirectFunction);
+logout();
+
+
 
 hamburger_menu();
 
@@ -21,9 +30,13 @@ function showMyAccount() {
 
   if (token !== "") {
     document.getElementById("login").classList.add("close");
+    document.getElementById("res-login").classList.add("close");
     document.getElementById("register").classList.add("close");
+    document.getElementById("res-register").classList.add("close");
     document.getElementById("my-account").classList.remove("close");
+    document.getElementById("res-my-account").classList.remove("close");
     document.getElementById("logout").classList.remove("close");
+    document.getElementById("res-logout").classList.remove("close");
   }
 }
 

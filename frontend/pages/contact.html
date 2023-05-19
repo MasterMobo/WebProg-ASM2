@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/contact.css">
     <link rel="stylesheet" href="../header/header.css">
     <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 
 <body>
@@ -20,24 +21,24 @@
         <nav id="desktop_nav">
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="./contact.html">Contact</a></li>
+                <li><a href="../pages/contact.html">Contact</a></li>
                 <li><a href="#">About Us</a></li>
                 <li class="sub-menu-parent"><a href="../pages/login.html">Shop</a>
                     <div class="sub-menu1">
                         <ul>
-                            <li><a href="./login.html">Cats</a></li>
-                            <li><a href="./login.html">Dogs</a></li>
-                            <li><a href="./login.html">Birds</a></li>
-                            <li><a href="./login.html">Fishes</a></li>
-                            <li><a href="./login.html">Reptiles</a></li>
-                            <li><a href="./login.html">Others</a></li>
+                            <li><a href="#">Cats</a></li>
+                            <li><a href="#">Dogs</a></li>
+                            <li><a href="#">Birds</a></li>
+                            <li><a href="#">Fishes</a></li>
+                            <li><a href="#">Reptiles</a></li>
+                            <li><a href="#">Others</a></li>
                         </ul>
                     </div>
                 </li>
                 <li><a href="#footer">Location</a></li>
             </ul>
         </nav>
-
+    
         <nav id="responsive_nav" class="close">
             <div class="search">
                 <i class="fa fa-search"></i>
@@ -63,30 +64,32 @@
                 <li><a href="#footer">Location</a></li>
             </ul>
             <div class="login-register">
-                <a class="btn-log" href="../pages/login.html"><button>Log In</button></a>
-                <a href="../pages/login.html"><button>Register</button> </a>
+                <a class="btn-log" id="res-login" href="../pages/login.html"><button>Log In</button></a>
+                <a href="../pages/login.html" id="res-register"><button>Register</button> </a>
+                <a id="res-my-account" class="close" href="../pages/profilePage.html"><button>My Account</button></a>
+                <a id="res-logout" class="close" href="../index.html"><button>Log Out</button></a>
             </div>
         </nav>
-
-
+    
+    
         <div class="desktop search">
             <i class="fa fa-search"></i>
             <input type="text" class="search_bar" placeholder="Search" />
             <button class="bx bx-search"></button>
         </div>
-
-        <a href='#' class="cart"><i class='bx bxs-cart'></i></a>
-
+    
+        <a href='cart.html' class="cart"><i class='bx bxs-cart'></i></a>
+    
         <div class="desktop login-register">
-            <a href="../pages/login.html"><button>Log In</button></a>
-            <a href="../pages/login.html"><button>Register</button> </a>
+            <a href="../pages/login.html" id="login"><button>Log In</button></a>
+            <a href="../pages/login.html" id="register"><button>Register</button> </a>
+            <a id="my-account" class="close" href="../pages/profilePage.html"><button>My Account</button></a>
+            <a id="logout" class="close" href="../index.html"><button>Log Out</button></a>
         </div>
-
+    
         <div class="bx bx-menu" id="menu-icon"></div>
-
-
     </header>
-    <script src="./header.js"></script>
+    <script src="../header/header.js"></script>
     <div class="samsung-galaxy-a12">
         <div class="billboard">
             <img src="../serviceImages/Billboard Images/billboard image.jpg" alt="billboard image">

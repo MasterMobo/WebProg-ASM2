@@ -10,7 +10,7 @@ header {
   position: fixed;
   width: 100%;
   max-width: 100vw;
-  z-index: 1000;
+  z-index: 100000;
 }
 
 header:hover {
@@ -211,6 +211,7 @@ nav .sub-menu1 li:hover a {
 
 #responsive_nav {
   position: absolute;
+  z-index: 1000;
   top: 100%;
   margin-right: -2%;
   width: 15rem;

@@ -75,8 +75,8 @@ body {
     overflow-x: hidden;
 }
 
-a,
-a.visited {
+.vendor-buttons a, 
+.vendor-buttons a.visited {
     display: block;
     text-decoration: none;
     color: var(--TEXT-COLOR);
