@@ -4,7 +4,7 @@
     "description": "This is the folder for the back-end Express.js server",
     "main": "app.js",
     "scripts": {
-        "start": "nodemon app.js"
+        "start": "nodemon index.js"
     },
     "keywords": [],
     "author": "",
