@@ -21,6 +21,7 @@ const start = async () => {
     );
     const data = await productByID.json();
     renderProduct(data.product);
+    addToCart(data.product);
     console.log(data);
     const recommenedProducts = await fetch(
         `http://localhost:3000/api/v1/product?category=${data.product.category}`,
@@ -69,9 +70,8 @@ const renderProduct = (product) => {
                                 <h1>${product.price}</h1>
                             </div>
                         </div>
-                        <div class="add-to-cart">
+                        <div class="add-to-cart" id="add-to-cart">
                             <a
-                                href=""
                                 class="add-to-cart-link"
                             >
                                 <span
@@ -156,4 +156,23 @@ const renderRecommenedProducts = (recommendedProducts) => {
         `;
         productContainer.appendChild(productCard);
     });
+    
 };
+
+function addToCart(product) {
+    var addToCartButton = document.getElementById('add-to-cart');
+    addToCartButton.addEventListener('click', function() {
+        localStorage.setItem('cart', JSON.stringify({
+            "products"  : [
+                {
+                    "productID": product._id, 
+                    quantity: 1
+                },
+            ],
+            
+        }));
+        console.log('added to cart');
+        
+    });
+};
+
