@@ -1,3 +1,10 @@
+// RMIT University Vietnam
+// Course: COSC2430 Web Programming
+// Semester: 2023A
+// Assessment: Assignment 2
+// Author: Bui Dang Khoa, Tran Phan Trong Phuc
+// ID: s3978282, s3979081
+
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 const mongoose = require("mongoose");
@@ -34,17 +41,17 @@ const cleansedb = async () => {
 const populateDB = async () => {
     await DistributionHub.insertMany([
         {
-            "name": "Ho Chi Minh",
-            "address": "3 Nguyen Tat Thanh, Phuong 12, Ward 4, Ho Chi Minh"
+            name: "Ho Chi Minh",
+            address: "3 Nguyen Tat Thanh, Phuong 12, Ward 4, Ho Chi Minh",
         },
         {
-            "name": "Hanoi",
-            "address": "838 Bach Dang, Thanh Long, Hai Ba Trung, Ha Noi"
+            name: "Hanoi",
+            address: "838 Bach Dang, Thanh Long, Hai Ba Trung, Ha Noi",
         },
         {
-            "name": "Da Nang",
-            "address": "26 Bach Dang, Hai Chau, Da Nang"
-        }
+            name: "Da Nang",
+            address: "26 Bach Dang, Hai Chau, Da Nang",
+        },
     ]);
     console.log("Populated DB");
-}
+};
