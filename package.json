@@ -2,7 +2,7 @@
     "name": "backend",
     "version": "1.0.0",
     "description": "This is the folder for the back-end Express.js server",
-    "main": "app.js",
+    "main": "index.js",
     "scripts": {
         "start": "nodemon index.js"
     },
