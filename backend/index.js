@@ -1,3 +1,10 @@
+// RMIT University Vietnam
+// Course: COSC2430 Web Programming
+// Semester: 2023A
+// Assessment: Assignment 2
+// Author: Bui Dang Khoa, Tran Phan Trong Phuc
+// ID: s3978282, s3979081
+
 require("dotenv").config(); // Load environment variables into process.env
 require("express-async-errors"); // Handle async errors (this will throw async errors directly to the error handler middleware)
 
