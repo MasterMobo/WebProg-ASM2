@@ -18,6 +18,7 @@ const start = async () => {
         role,
         name,
         address,
+        profilePicURL,
         businessName,
         businessAddress,
         distributionHubId,
@@ -31,7 +32,9 @@ const start = async () => {
     }
     profile.innerHTML = `
     <div class="profile-picture-and-name">
-    <div id="profile-picture"></div>
+    <div id="profile-picture">
+    <img src="${profilePicURL}" alt="profile picture">
+    </div>
     <h2>${username}</h2>
     <p>${role}</p>
 </div>
