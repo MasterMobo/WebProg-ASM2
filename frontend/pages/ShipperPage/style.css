@@ -56,7 +56,7 @@ body {
     position: relative;
     background-color: transparent;
     justify-content: center;
-    
+    width: 60vh;
 }
 .profile-img-wrapper {
   display: flex;
@@ -67,9 +67,16 @@ body {
   justify-content: space-between;
   width: 60%;
   max-width: 400px;
+  position: relative;
+  right: 10vw;
 }
 .profile-info h1 {
-  margin-right: auto;
+  margin-right: 8vw;
+  color: #000;
+}
+
+.contact-info h3 {
+  color: #000;
 }
 .star-wrapper {
     /* top: 50%;
