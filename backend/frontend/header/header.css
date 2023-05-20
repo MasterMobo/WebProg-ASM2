@@ -119,10 +119,11 @@ nav li:hover a {
 
 .login-register {
     padding-right: 1.875rem;
+    text-decoration: none;
     /*30px*/
 }
 
-.login-register button {
+.login-register a {
     background-color: #000000;
     color: #fff;
     border: none;
@@ -135,16 +136,17 @@ nav li:hover a {
     transition: 0.25s;
     user-select: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
-.login-register button:hover {
+.login-register a:hover {
     color: #000000;
     background-color: #ffffff;
     border: 0.125rem #000000 solid;
     /*2px*/
 }
 
-.login-register button:first-child {
+.login-register a:first-child {
     margin-left: 0;
 }
 
@@ -346,7 +348,7 @@ nav .sub-menu1 li:hover a {
     }
 
 
-    .login-register button {
+    .login-register a {
         padding: 0.5rem 1rem;
         /* Reduce the padding */
         margin-left: 0.625rem;
