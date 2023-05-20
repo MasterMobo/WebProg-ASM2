@@ -41,21 +41,3 @@ function showMyAccount() {
 }
 
 showMyAccount();
-
-function pageLinking() {
-  var token = localStorage.getItem('token'); // Access the token value from the response data
-  var role = JSON.parse(localStorage.getItem('user')).role;
-  const desktop_nav = document.querySelector("#desktop_nav");
-if (token !== "") {
-  if (role == 'customer') {
-    desktop_nav.innerHTML = `
-            <tr>
-                <th>Product</th>
-                <th id="price">Price</th>
-                <th id="quantity_title">Quantity</th>
-                <th>Subtotal</th>
-            </tr>
-        `;
-  }
-}
-}

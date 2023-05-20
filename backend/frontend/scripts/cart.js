@@ -22,7 +22,7 @@ function renderProduct() {
                 <div class="cart-info">
                     <img src="${product_data.imageURL}">
                     <div>
-                    <p>${product_data.nameL}</p>
+                    <p>${product_data.name}</p>
                     <button class="remove-btn">
                         Remove
                     </button>
@@ -54,7 +54,16 @@ function Order() {
         );
         const data = await res.json();
         console.log(data)
-        
+        const productContainer = document.querySelector("#cart_product");
+        productContainer.innerHTML = `
+            <tr>
+                <th>Product</th>
+                <th id="price">Price</th>
+                <th id="quantity_title">Quantity</th>
+                <th>Subtotal</th>
+            </tr>
+        `;
+
     })
 }
 Order()
