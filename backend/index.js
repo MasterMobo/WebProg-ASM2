@@ -20,6 +20,8 @@ const productRoutes = require("./routes/product");
 const orderRoutes = require("./routes/order");
 const hubRoutes = require("./routes/distributionHub");
 
+app.use(express.static("./frontend")); // Serve static files
+
 app.use(cors()); // Enable CORS
 app.use(express.json()); // Middleware to handle JSON data
 app.use("/api/v1/auth", authRoutes); // Route for login and register
