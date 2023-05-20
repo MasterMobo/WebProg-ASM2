@@ -268,6 +268,14 @@ background-color: antiquewhite;
   justify-content: center;
   align-items: center;
 }
+.card .img-wrapper img {
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-title {
+  color: #000; 
+}
 img{
   max-height: 100%;
   object-fit: contain;
