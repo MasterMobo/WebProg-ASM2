@@ -28,8 +28,9 @@ const start = async () => {
         const hubRes = await fetch(
             `http://localhost:3000/api/v1/hub/${distributionHubId}`
         );
-        const hub = await hubRes.json();
+        var hub = (await hubRes.json()).hub;
     }
+
     profile.innerHTML = `
     <div class="profile-picture-and-name">
     <div id="profile-picture">
