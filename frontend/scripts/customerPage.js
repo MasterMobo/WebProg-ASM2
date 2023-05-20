@@ -27,7 +27,7 @@ const renderProducts = (products) => {
         const productCard = document.createElement("div");
         productCard.classList.add("product");
         productCard.innerHTML = `
-        <a href="../ProductPage/index.html?id=${product._id}">    
+        <a href="../pages/productPage.html?id=${product._id}">    
             <div class="product-image">
                                 <img
                                     src="${product.imageURL}"
