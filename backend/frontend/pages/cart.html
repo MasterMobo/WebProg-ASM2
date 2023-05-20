@@ -14,75 +14,77 @@
 <body>
   <header>
     <div class="logo">
-        <img src="../images/logo.png" alt="petcung" />
+      <img src="../images/logo.png" alt="petcung" />
     </div>
     <nav id="desktop_nav">
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../pages/contact.html">Contact</a></li>
-            <li><a href="#">About Us</a></li>
-            <li class="sub-menu-parent"><a href="../pages/login.html">Shop</a>
-                <div class="sub-menu1">
-                    <ul>
-                        <li><a href="#">Cats</a></li>
-                        <li><a href="#">Dogs</a></li>
-                        <li><a href="#">Birds</a></li>
-                        <li><a href="#">Fishes</a></li>
-                        <li><a href="#">Reptiles</a></li>
-                        <li><a href="#">Others</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="#footer">Location</a></li>
-        </ul>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/contact.html">Contact</a></li>
+        <li><a href="#">About Us</a></li>
+        <li class="sub-menu-parent"><a href="../pages/login.html">Shop</a>
+          <div class="sub-menu1">
+            <ul>
+              <li><a href="#">Cats</a></li>
+              <li><a href="#">Dogs</a></li>
+              <li><a href="#">Birds</a></li>
+              <li><a href="#">Fishes</a></li>
+              <li><a href="#">Reptiles</a></li>
+              <li><a href="#">Others</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#footer">Location</a></li>
+      </ul>
     </nav>
 
     <nav id="responsive_nav" class="close">
-        <div class="search">
-            <i class="fa fa-search"></i>
-            <input type="text" class="search_bar" placeholder="Search" />
-            <button class="bx bx-search"></button>
-        </div>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../pages/contact.html">Contact</a></li>
-            <li><a href="#">About Us</a></li>
-            <li class="sub-menu-parent"><a id="title" href="#">Shop</a>
-                <div class="sub-menu1">
-                    <ul>
-                        <li><a href="#">Cats</a></li>
-                        <li><a href="#">Dogs</a></li>
-                        <li><a href="#">Birds</a></li>
-                        <li><a href="#">Fishes</a></li>
-                        <li><a href="#">Reptiles</a></li>
-                        <li><a href="#">Others</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="#footer">Location</a></li>
-        </ul>
-        <div class="login-register">
-            <a class="btn-log" id="res-login" href="../pages/login.html"><button>Log In</button></a>
-            <a href="../pages/login.html" id="res-register"><button>Register</button> </a>
-            <a id="res-my-account" class="close" href="../pages/profilePage.html"><button>My Account</button></a>
-            <a id="res-logout" class="close" href="../index.html"><button>Log Out</button></a>
-        </div>
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input type="text" class="search_bar" placeholder="Search" />
+        <button class="bx bx-search"></button>
+      </div>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/contact.html">Contact</a></li>
+        <li><a href="#">About Us</a></li>
+        <li class="sub-menu-parent"><a id="title" href="#">Shop</a>
+          <div class="sub-menu1">
+            <ul>
+              <li><a href="#">Cats</a></li>
+              <li><a href="#">Dogs</a></li>
+              <li><a href="#">Birds</a></li>
+              <li><a href="#">Fishes</a></li>
+              <li><a href="#">Reptiles</a></li>
+              <li><a href="#">Others</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#footer">Location</a></li>
+      </ul>
+      <div class="login-register">
+        <a class="btn-log" id="res-login" href="../pages/login.html">
+          Log In
+        </a>
+        <a href="../pages/login.html" id="res-register">Register</a>
+        <a id="res-my-account" class="close" href="../pages/profilePage.html">My Account</a>
+        <a id="res-logout" class="close" href="../index.html">Log Out</a>
+      </div>
     </nav>
 
 
     <div class="desktop search">
-        <i class="fa fa-search"></i>
-        <input type="text" class="search_bar" placeholder="Search" />
-        <button class="bx bx-search"></button>
+      <i class="fa fa-search"></i>
+      <input type="text" class="search_bar" placeholder="Search" />
+      <button class="bx bx-search"></button>
     </div>
 
     <a href='cart.html' class="cart"><i class='bx bxs-cart'></i></a>
 
     <div class="desktop login-register">
-        <a href="../pages/login.html" id="login"><button>Log In</button></a>
-        <a href="../pages/login.html" id="register"><button>Register</button> </a>
-        <a id="my-account" class="close" href="../pages/profilePage.html"><button>My Account</button></a>
-        <a id="logout" class="close" href="../index.html"><button>Log Out</button></a>
+      <a href="../pages/login.html" id="login">Log In</a>
+      <a href="../pages/login.html" id="register">Register</a>
+      <a id="my-account" class="close" href="../pages/profilePage.html">My Account</a>
+      <a id="logout" class="close" href="../index.html">Log Out</a>
     </div>
 
     <div class="bx bx-menu" id="menu-icon"></div>
@@ -90,7 +92,7 @@
   <script src="../header/header.js"></script>
 
   <div class="small-container">
-    <table>
+    <table id="cart_product">
       <tr>
         <th>Product</th>
         <th id="price">Price</th>
@@ -98,10 +100,10 @@
         <th>Subtotal</th>
       </tr>
 
-      <tr>
+      <!-- <tr>
         <td>
           <div class="cart-info">
-            <img src="test.jpg">
+            <img src="./test.jpg">
             <div>
               <p>Product Name</p>
               <button class="remove-btn">
@@ -113,7 +115,7 @@
         <td>$50.00</td>
         <td id="quantity"><input type="number" value="1"></td>
         <td>$50.00</td>
-      </tr>
+      </tr> -->
     </table>
 
 
@@ -136,9 +138,9 @@
     </table>
   </div>
 
-  <div class="purchase-btn-wrapper">
+  <div class="purchase-btn-wrapper" id="purchase-btn-wrapper">
     <button class="purchase-btn">
-      Purchase
+      Order
     </button>
   </div>
 
@@ -154,19 +156,19 @@
       <div class="img-section-wrapper">
         <h2>Payment Method</h2>
         <div class="img-wrapper">
-          <img src="../images/visa.png" alt="visa" />
-          <img src="../images/mastercard.png" alt="mastercard" />
-          <img src="../images/momo.png" alt="momo" />
-          <img src="../images/zalopay.png" alt="zalopay" />
+          <img src="../images/footer/visa.png" alt="visa" />
+          <img src="../images/footer/mastercard.png" alt="mastercard" />
+          <img src="../images/footer/momo.png" alt="momo" />
+          <img src="../images/footer/zalopay.png" alt="zalopay" />
         </div>
       </div>
 
       <div class="img-section-wrapper">
         <h2>Delivery</h2>
         <div class="img-wrapper">
-          <img src="../images/vnpost.png" alt="vnpost" />
-          <img src="../images/viettelpost.png" alt="viettelpost" />
-          <img src="../images/GHN.png" alt="GHN" />
+          <img src="../images/footer/vnpost.png" alt="vnpost" />
+          <img src="../images/footer/viettelpost.png" alt="viettelpost" />
+          <img src="../images/footer/GHN.png" alt="GHN" />
         </div>
       </div>
 
@@ -175,9 +177,9 @@
           <h2>Contact Us</h2>
         </a>
         <div class="img-wrapper">
-          <img src="../images/facebook.png" alt="facebook" />
-          <img src="../images/messenger.png" alt="messenger" />
-          <img src="../images/gmail.png" alt="gmail" />
+          <img src="../images/footer/facebook.png" alt="facebook" />
+          <img src="../images/footer/messenger.png" alt="messenger" />
+          <img src="../images/footer/gmail.png" alt="gmail" />
         </div>
       </div>
     </div>

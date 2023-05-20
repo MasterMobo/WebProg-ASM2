@@ -74,7 +74,9 @@ body {
   margin-right: 8vw;
   color: #000;
 }
-
+.contact-info {
+  width: 60vh;
+}
 .contact-info h3 {
   color: #000;
 }
