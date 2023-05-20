@@ -1,3 +1,10 @@
+/* RMIT University Vietnam
+  Course: COSC2430 Web Programming
+  Semester: 2023A
+  Assessment: Assignment 2
+  Author: Ly Minh Phuc
+  ID: s3976250 */
+
 // get id from URL params
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
@@ -5,45 +12,45 @@ const id = urlParams.get("id");
 // check for token in local storage
 const token = localStorage.getItem("token");
 if (!token) {
-    // window.location.href = "/login";
+  // window.location.href = "/login";
 }
 
 const start = async () => {
-    const productByID = await fetch(
-        `http://localhost:3000/api/v1/product/${id}`,
-        {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        }
-    );
-    const data = await productByID.json();
-    renderProduct(data.product);
-    addToCart(data.product);
-    console.log(data);
-    const recommenedProducts = await fetch(
-        `http://localhost:3000/api/v1/product?category=${data.product.category}`,
-        {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${token}`,
-            },
-        }
-    );
-    const recommenedProductsData = await recommenedProducts.json();
-    renderRecommenedProducts(recommenedProductsData.products);
-    console.log(recommenedProductsData);
+  const productByID = await fetch(
+    `http://localhost:3000/api/v1/product/${id}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  const data = await productByID.json();
+  renderProduct(data.product);
+  addToCart(data.product);
+  console.log(data);
+  const recommenedProducts = await fetch(
+    `http://localhost:3000/api/v1/product?category=${data.product.category}`,
+    {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  const recommenedProductsData = await recommenedProducts.json();
+  renderRecommenedProducts(recommenedProductsData.products);
+  console.log(recommenedProductsData);
 };
 
 start();
 
 const renderProduct = (product) => {
-    productContainer = document.querySelector(".item-information");
-    productContainer.innerHTML = "";
-    productContainer.innerHTML = `                    
+  productContainer = document.querySelector(".item-information");
+  productContainer.innerHTML = "";
+  productContainer.innerHTML = `                    
     <div class="item-image-and-description">
     <div class="item-image-container">
         <img
@@ -133,12 +140,12 @@ const renderProduct = (product) => {
 };
 
 const renderRecommenedProducts = (recommendedProducts) => {
-    const productContainer = document.querySelector(".product-two");
-    productContainer.innerHTML = "";
-    recommendedProducts.forEach((product) => {
-        const productCard = document.createElement("div");
-        productCard.classList.add("product");
-        productCard.innerHTML = `
+  const productContainer = document.querySelector(".product-two");
+  productContainer.innerHTML = "";
+  recommendedProducts.forEach((product) => {
+    const productCard = document.createElement("div");
+    productCard.classList.add("product");
+    productCard.innerHTML = `
         <a href="../ProductPage/index.html?id=${product._id}">    
             <div class="product-image">
                                 <img
@@ -154,25 +161,24 @@ const renderRecommenedProducts = (recommendedProducts) => {
                             </div>
         </a>
         `;
-        productContainer.appendChild(productCard);
-    });
-    
+    productContainer.appendChild(productCard);
+  });
 };
 
 function addToCart(product) {
-    var addToCartButton = document.getElementById('add-to-cart');
-    addToCartButton.addEventListener('click', function() {
-        localStorage.setItem('cart', JSON.stringify({
-            "products"  : [
-                {
-                    "productID": product._id, 
-                    quantity: 1
-                },
-            ],
-            
-        }));
-        console.log('added to cart');
-        
-    });
-};
-
+  var addToCartButton = document.getElementById("add-to-cart");
+  addToCartButton.addEventListener("click", function () {
+    localStorage.setItem(
+      "cart",
+      JSON.stringify({
+        products: [
+          {
+            productID: product._id,
+            quantity: 1,
+          },
+        ],
+      })
+    );
+    console.log("added to cart");
+  });
+}

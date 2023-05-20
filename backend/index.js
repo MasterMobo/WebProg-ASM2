@@ -3,7 +3,7 @@
 // Semester: 2023A
 // Assessment: Assignment 2
 // Author: Bui Dang Khoa, Tran Phan Trong Phuc
-// ID: s3978282, s3979081
+// ID: s3978482, s3979081
 
 require("dotenv").config(); // Load environment variables into process.env
 require("express-async-errors"); // Handle async errors (this will throw async errors directly to the error handler middleware)
@@ -45,10 +45,10 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 3000;
 
 const start = async () => {
-    await app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-    });
-    console.log("Connecting to database...");
-    await connectDB(process.env.MONGO_URI);
+  await app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+  console.log("Connecting to database...");
+  await connectDB(process.env.MONGO_URI);
 };
 start();

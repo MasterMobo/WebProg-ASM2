@@ -1,3 +1,11 @@
+/* RMIT University Vietnam
+  Course: COSC2430 Web Programming
+  Semester: 2023A
+  Assessment: Assignment 2
+  Author: Duong Tran Minh Hoang
+  ID: s3978452
+  */
+
 const carouselWidth = $(".carousel-inner")[0].scrollWidth;
 const cardWidth = $(".carousel-item").width();
 const scrollPosition = 0;

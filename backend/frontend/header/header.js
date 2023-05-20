@@ -1,3 +1,10 @@
+/* RMIT University Vietnam
+  Course: COSC2430 Web Programming
+  Semester: 2023A
+  Assessment: Assignment 2
+  Author: Nguyen Trong Tien
+  ID: s3978616 */
+
 const hamburger_menu = () => {
   let menu = document.querySelector("#menu-icon");
   let navbar = document.querySelector("#responsive_nav");
@@ -12,21 +19,19 @@ function logout() {
   document.querySelector("#logout").addEventListener("click", function () {
     localStorage.setItem("token", "");
     localStorage.removeItem("user");
-});
+  });
   document.querySelector("#res-logout").addEventListener("click", function () {
     localStorage.setItem("token", "");
     localStorage.removeItem("user");
-});
+  });
 }
 
 logout();
 
-
-
 hamburger_menu();
 
 function showMyAccount() {
-    var token = localStorage.getItem('token'); // Access the token value from the response data
+  var token = localStorage.getItem("token"); // Access the token value from the response data
 
   if (token !== "") {
     document.getElementById("login").classList.add("close");
