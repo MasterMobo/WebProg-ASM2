@@ -49,11 +49,8 @@ const start = async () => {
         console.log("main 2");
         console.log("feature 1");
         console.log("feature 2");
-<<<<<<< HEAD
         console.log("main 3");
-=======
         console.log("feature 3");
->>>>>>> 67b0404 (feature 3)
         console.log(`Server is running on port ${PORT}`);
     });
     console.log("Connecting to database...");
